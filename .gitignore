@@ -1,0 +1,5 @@
+# Hidden Files/Folders
+.vscode/
+
+# Folders
+/node_modules

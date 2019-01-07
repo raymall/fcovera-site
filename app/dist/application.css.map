@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./app/src/styles/application.scss"],"names":[],"mappings":"AAAA;AACA;AACA;AACA,wDAAwD","file":"application.css","sourcesContent":["/* Views */\n.hello {\n  color: yellow;\n  background: url(e335816db4d59240225ea4790e4e5669.png); }\n"],"sourceRoot":""}
