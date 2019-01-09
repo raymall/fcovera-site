@@ -15,6 +15,13 @@ a {
 // Body text
 // -----------------------------------------------------------------------------
 
+p {
+  font-size: 20px;
+  font-weight: lighter;
+  font-family: $ff-primary;
+  color: $color-gray;
+}
+
 small {
   font-weight: 400;
   font-size: 18px;

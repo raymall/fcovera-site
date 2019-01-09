@@ -1,3 +1,81 @@
+.container {
+  position: relative;
+  width: 100%;
+  padding: 0;
+  margin-bottom: 180px;
+
+  .-inner {
+    @include xy-grid-container;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+}
+
+.description {
+  @include xy-cell(7, false);
+
+  p {
+    width: 90%;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}
+
+.last-thought {
+  @include xy-cell(5, false);
+
+  .-header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    margin-bottom: 30px;
+
+    h2 {
+      margin: 0;
+      font-weight: lighter;
+      font-size: 15px;
+      font-family: $ff-secondary;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: $color-gray--light;
+    }
+
+    a {
+      font-size: 15px;
+      text-transform: uppercase;
+    }
+  }
+
+  .-article {
+    h1 {
+      margin: 0;
+      font-weight: lighter;
+      font-size: 32px;
+      font-family: $ff-secondary;
+      letter-spacing: 0.5px;
+      color: $color-blue;
+    }
+
+    time {
+      font-weight: lighter;
+      font-size: 15px;
+      font-family: $ff-primary;
+      color: $color-gray--lighter;
+    }
+  }
+}
+
 .promote {
   position: relative;
   width: 100%;
@@ -26,23 +104,12 @@
 
   p {
     padding: 0;
+    margin: 0;
     font-size: 28px;
     font-weight: normal;
     font-family: $ff-secondary;
     text-decoration: none;
     letter-spacing: 0.5px;
     color: $color-gray;
-  }
-
-  .-icon {
-    display: inline-block;
-    width: 42px;
-    height: 42px;
-    padding: 0;
-    margin: 0 0 0 25px;
-    text-indent: -9999px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
   }
 }
