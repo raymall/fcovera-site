@@ -1,2 +1,23 @@
-/* Views */
-@import 'views/index.scss'
+// --
+// Utilities
+// --
+@import 'utils/_mixins.scss';
+@import 'utils/_functions.scss';
+@import 'utils/_breakpoints.scss';
+@import 'utils/_colors.scss';
+@import 'utils/_typography.scss';
+
+// --
+// Base
+// --
+@import 'base/_setup.scss';
+@import 'base/_type.scss';
+@import 'base/_forms.scss';
+@import 'base/_media.scss';
+@import 'base/_tables.scss';
+@import 'base/_print.scss';
+
+// --
+// Views
+// --
+@import 'views/index.scss';
