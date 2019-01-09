@@ -1,9 +1,13 @@
+@import 'node_modules/foundation-sites/scss/foundation.scss';
+@include foundation-xy-grid-classes;
+
 // --
 // Utilities
 // --
 @import 'utils/_mixins.scss';
 @import 'utils/_functions.scss';
 @import 'utils/_breakpoints.scss';
+@import 'utils/_grid.scss';
 @import 'utils/_colors.scss';
 @import 'utils/_typography.scss';
 
@@ -16,6 +20,12 @@
 @import 'base/_media.scss';
 @import 'base/_tables.scss';
 @import 'base/_print.scss';
+
+// --
+// Layout
+// --
+@import 'layout/_header.scss';
+@import 'layout/_footer.scss';
 
 // --
 // Views

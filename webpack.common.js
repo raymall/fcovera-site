@@ -21,6 +21,17 @@ module.exports = {
       // },
       {
         test: /\.scss$/,
+        // use: [
+        //   'style-loader',
+        //   MiniCssExtractPlugin.loader,
+        //   'css-loader',
+        //   {
+        //     loader: 'sass-loader',
+        //     options: {
+        //       includePaths: [path.resolve(__dirname, "node_modules/foundation-sites/scss")]
+        //     }
+        //   }
+        // ],
         use:  [
           'style-loader',
           MiniCssExtractPlugin.loader,
