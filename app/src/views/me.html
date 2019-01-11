@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <%= require('html-loader!./partials/head.html') %>
+    <link rel="stylesheet" type="text/css" href="../application.css">
+  </head>
+  <body>
+    
+    <%= require('html-loader!./partials/header.html') %>
+
+    <section class="me">
+      <div class="-inner">
+        <div class="-left">
+          <img src="../images/me.jpg">
+        </div>
+        <div class="-right">
+          <h1>
+            Hi. I am Francisco.<br>
+            I studied graphic design and working as user experience designer during seven years.
+          </h1>
+          <p>
+            I’m from Chile. My alma matter is the school of architecture and design of PUCV. Sometimes I put some thoughts in my writings, inspired by what I read in pocket, twitter and medium.
+          </p>
+          <p>
+            When I started working in bigger digital systems, I realized that a service design approach is key to tackle the challenges we are facing nowadays. Since then, I have been studying by my own and putting in practice tools and methodologies.
+          </p>
+          <p>
+            During my free time I love playing guitar, walking through Santiago and taking some photos.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <%= require('html-loader!./partials/footer.html') %>
+
+  </body>
+</html>

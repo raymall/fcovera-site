@@ -3,12 +3,13 @@
   <head>
     <title><%= htmlWebpackPlugin.options.title %></title>
     <%= require('html-loader!./partials/head.html') %>
+    <link rel="stylesheet" type="text/css" href="application.css">
   </head>
   <body>
     
     <%= require('html-loader!./partials/header.html') %>
 
-    <section class="container">
+    <section class="introduction">
       <div class="-inner">
         <div class="description">
           <p>
@@ -27,6 +28,15 @@
             <h1>Three years in the public sector</h1>
             <time datetime="2018-11-16">16th November</time>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="what-i-do">
+      <div class="-inner">
+        <h2 class="-title --discovering">Discovering</h2>
+        <div class="-showcase">
+
         </div>
       </div>
     </section>

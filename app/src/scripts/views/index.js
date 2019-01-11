@@ -1,4 +1,4 @@
-import printMe from './about.js';
+import printMe from './me.js';
 
 (function() {
   printMe();

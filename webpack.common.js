@@ -1,6 +1,7 @@
 const path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlBeautifyPlugin = require('html-beautify-webpack-plugin');
 
@@ -8,6 +9,7 @@ module.exports = {
   entry: {
     styles: './app/src/styles/application.scss',
     index: './app/src/scripts/views/index.js',
+    me: './app/src/scripts/views/me.js',
   },
   module: {
     rules: [
@@ -18,6 +20,11 @@ module.exports = {
       //     "css-loader", // translates CSS into CommonJS
       //     "sass-loader" // compiles Sass to CSS, using Node Sass by default
       //   ]
+      // },
+
+      // {
+      //   test: /\.(html)$/,
+      //   use: ['html-loader']
       // },
       {
         test: /\.scss$/,
@@ -40,10 +47,14 @@ module.exports = {
         ]
       }, 
       {
-        test: /\.(png|svg|jpg|gif)$/,
-        use: [
-          'file-loader'
-        ]
+        test: /\.(jpe?g|png|gif|svg|ico)$/i,
+        use: [{
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'images/'
+            }
+        }]
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
@@ -55,6 +66,11 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(['dist']),
+
+    // new CopyWebpackPlugin([{
+    //   from:'.app/src/assets/images/',
+    //   to: 'images/[name].[ext]'
+    // }]), 
     new MiniCssExtractPlugin({
       filename: "application.css"
     }),
@@ -62,6 +78,12 @@ module.exports = {
       title: 'Homepage',
       filename: 'index.html',
       template: './app/src/views/index.html',
+      chunks: ['index'],
+    }),
+    new HtmlWebpackPlugin({
+      title: 'About Me',
+      filename: 'me/index.html',
+      template: './app/src/views/me.html',
       chunks: ['index'],
     }),
     // new HtmlWebpackPlugin({

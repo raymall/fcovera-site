@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="41px" height="37px" viewBox="0 0 41 37" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-def</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Home" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="m-home" transform="translate(-30.000000, -2343.000000)">
+            <g id="what-I-do" transform="translate(0.000000, 939.000000)">
+                <g id="define" transform="translate(30.000000, 1404.000000)">
+                    <g id="icon-def">
+                        <g>
+                            <polygon id="square" fill="#66ECD1" transform="translate(25.423823, 16.794335) rotate(-15.000000) translate(-25.423823, -16.794335) " points="12.9356273 4.14837075 37.9839413 4.07625892 37.9120188 29.4402999 12.8637047 29.5124117"></polygon>
+                            <ellipse id="circle" stroke="#0000CC" stroke-width="2" cx="10.5" cy="10.7241379" rx="9.5" ry="9.62068966"></ellipse>
+                            <path d="M27,17.5757672 L14.8567556,36 L39.1432444,36 L27,17.5757672 Z" id="triangle" stroke="#0000CC" stroke-width="2" transform="translate(27.000000, 26.379310) rotate(-360.000000) translate(-27.000000, -26.379310) "></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

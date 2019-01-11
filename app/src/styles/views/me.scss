@@ -1,0 +1,51 @@
+.me {
+  position: relative;
+  width: 100%;
+  padding: 0;
+  margin-bottom: 100px;
+
+  .-inner {
+    @include xy-grid-container;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .-left {
+    @include xy-cell(6);
+
+    position: relative;
+    
+    img {
+      position: absolute;
+      top: 0;
+      right: 100px;
+      width: 130%;
+      height: auto;
+    }
+  }
+
+  .-right {
+    @include xy-cell(6);
+
+    h1 {
+      margin: 0 0 50px 0;
+      font-weight: lighter;
+      font-size: 42px;
+      font-family: $ff-secondary;
+      letter-spacing: 0.5px;
+      color: $color-gray;
+    }
+
+    p {
+      margin-bottom: 50px;
+      font-size: 20px;
+      font-family: $ff-primary;
+      color: $color-gray;
+    }
+  }
+}
