@@ -75,7 +75,7 @@ module.exports = {
       filename: "application.css"
     }),
     new HtmlWebpackPlugin({
-      title: 'Homepage',
+      title: 'Francisco Vera',
       filename: 'index.html',
       template: './app/src/views/index.html',
       chunks: ['index'],
@@ -84,6 +84,24 @@ module.exports = {
       title: 'About Me',
       filename: 'me/index.html',
       template: './app/src/views/me.html',
+      chunks: ['index'],
+    }),
+    new HtmlWebpackPlugin({
+      title: 'Work',
+      filename: 'work/index.html',
+      template: './app/src/views/work.html',
+      chunks: ['index'],
+    }),
+    new HtmlWebpackPlugin({
+      title: 'Writings',
+      filename: 'writings/index.html',
+      template: './app/src/views/writings.html',
+      chunks: ['index'],
+    }),
+    new HtmlWebpackPlugin({
+      title: 'Writings Post',
+      filename: 'writings/writings-post/index.html',
+      template: './app/src/views/writings-post.html',
       chunks: ['index'],
     }),
     // new HtmlWebpackPlugin({

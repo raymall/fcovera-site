@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <%= require('html-loader!./partials/head.html') %>
+    <link rel="stylesheet" type="text/css" href="../application.css">
+  </head>
+  <body>
+    
+    <%= require('html-loader!./partials/header.html') %>
+
+    <section class="work">
+      <div class="-inner">
+        <div class="-left">
+          <h1>
+            Simplification of a purchase process.
+          </h1>
+          <small>
+            ChileCompra
+          </small>
+        </div>
+        <div class="-right">
+          <img src="../images/me.jpg">
+        </div>
+      </div>
+    </section>
+
+    <%= require('html-loader!./partials/footer.html') %>
+
+  </body>
+</html>

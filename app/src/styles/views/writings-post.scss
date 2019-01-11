@@ -1,0 +1,167 @@
+.writings-post {
+  position: relative;
+  width: 100%;
+  padding: 0;
+  margin-bottom: 100px;
+
+  .-inner {
+    @include xy-grid-container;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  figure {
+    padding: 0;
+    margin: 0 0 80px 0;
+
+    img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 20px;
+    }
+
+    figcaption {
+      font-size: 15px;
+      font-family: $ff-primary;
+      text-align: center;
+      color: $color-gray--lighter;
+
+      span {
+        color: $color-blue;
+      }
+    }
+  }
+
+  .-content {
+    @include xy-cell(8, false);
+    @include xy-cell-offset(2);
+
+    h1 {
+      margin-bottom: 20px;
+      font-weight: lighter;
+      font-size: 42px;
+      font-family: $ff-secondary;
+      text-align: center;
+      letter-spacing: 0.5px;
+      color: $color-gray;
+    }
+
+    h2 {
+      margin: 60px 0 0 0;
+      font-weight: lighter;
+      font-size: 32px;
+      font-family: $ff-secondary;
+      letter-spacing: 0.5px;
+      color: $color-gray;
+    }
+
+    time {
+      display: block;
+      margin-bottom: 20px;
+      font-size: 15px;
+      font-family: $ff-primary;
+      text-align: center;
+      color: $color-gray--lighter;
+    }
+
+    p {
+      margin-bottom: 40px;
+      font-size: 20px;
+      font-family: $ff-primary;
+      color: $color-gray;
+    }
+
+    figure {
+      margin-bottom: 0;
+    }
+  }
+
+  .-left {
+    @include xy-cell(4, false);
+
+    h1 {
+      margin: 0;
+      font-weight: lighter;
+      font-size: 42px;
+      line-height: 1.25;
+      font-family: $ff-secondary;
+      letter-spacing: 0.5px;
+      color: $color-gray;
+    }
+
+    p {
+      font-size: 20px;
+      font-family: $ff-primary;
+      color: $color-gray;
+    }
+
+    time {
+      font-size: 15px;
+      font-family: $ff-primary;
+      color: $color-gray--lighter;
+    }
+  }
+
+  .-right {
+    @include xy-cell(8);
+
+    position: relative;
+    
+    img {
+      position: relative;
+      width: 50%;
+      height: auto;
+      margin: 0 auto;
+    }
+  }
+}
+
+.next-post {
+  position: relative;
+  width: 100%;
+  padding: 0;
+
+  .-inner {
+    @include xy-grid-container;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  h1 {
+    margin-top: 0;
+    font-weight: lighter;
+    font-size: 32px;
+    font-family: $ff-secondary;
+    text-align: center;
+    letter-spacing: 0.5px;
+    color: $color-blue;
+  }
+
+  h3 {
+    display: block;
+    font-weight: lighter;
+    font-size: 15px;
+    font-family: $ff-secondary;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: $color-gray--light;
+
+    &:before {
+      display: block;
+      content: '📖';
+      margin: 0 auto 10px;
+      font-size: 40px;
+    }
+  }
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <%= require('html-loader!./partials/head.html') %>
+    <link rel="stylesheet" type="text/css" href="../../application.css">
+  </head>
+  <body>
+    
+    <%= require('html-loader!./partials/header.html') %>
+
+    <section class="writings-post">
+      <div class="-inner">
+        <article>
+          <figure>
+            <img src="../../images/me.jpg">
+            <figcaption>
+              <span>Control room desk</span> by Michael Berindei.
+            </figcaption>
+          </figure>
+
+          <div class="-content">
+            <h1>Three years as a civil servant</h1>
+            <time>16th November</time>
+
+            <p>
+              It had been a while since I moved from private to public sector, and today, after three years, I’m no longer a civil servant. In these years I’ve learned many things about public administration, and that allowed me to generate a diagnosis about the performance of some Chilean’s institutions.
+            </p>
+
+            <p>
+              During this time I saw the operation from two perspectives. First, from an interministerial institution that seeks to generate cultural changes to recognize and solve the government’s challenges collaboratively with citizens. And second, from an institution that manages and sets an administrative framework in the purchases made by public institutions.
+            </p>
+
+            <figure>
+              <img src="../../images/me.jpg">
+            </figure>
+
+            <p>
+              One is in charge of open and meet the state to citizens, and the other regulate and facilitate the purchases. In this two places that I worked, both operate actively with other institutions and civil servants. This dynamic allowed me to tie experiences and broadly understand the operation of this services.
+            </p>
+
+            <p>
+              To write this, I waited a few weeks to see with distance my path and put my learnings onto a scheme. My idea is not to point a specific institution, but make radiography about the services facing the people around this country.
+            </p>
+
+            <p>
+              The public administration’s challenges have deep roots, and this post is merely an apex. My notes wrap-up four breaks that go from the domestic and operative issues that teams have, to strategic points like the purpose of an institution.
+            </p>
+
+            <h2>
+              Roles, responsibilities, and sanctions
+            </h2>
+
+            <p>
+              The first thing that strikes a public service is the lack of clarity about the civil servant’s role. Despite the specific tasks given to each person, it is widespread to see the ambiguity about who might be in charge of the strategic decisions. There are responsible, but they’re full in meetings and therefore not capable of guiding the projects to achieve deadlines. Then, the leadership belongs to those with more character, empowered, and with the conviction to push the initiatives. This situation generates a bunch of lazy workers that get benefits from this lack.
+            </p>
+
+            <p>
+              While the stakeholders are off, the projects progress to a frozen stage and out of sight. No ones know what lefts, who worked last, or what will happen once it takes back. If it makes a return, the teams, goals, and the resources assigned are not the same. The job done is not viable, so let’s start again.
+            </p>
+
+            <p>
+              At the same time, the mechanisms of sanction are not efficient. The mistakes made by servants have no significant costs, except those projects that are strategic for the institution and where attention is full. Some built solutions are never implemented, and the consequences or those losses resources is zero. The workplace’s mood becomes passive, and then no one really cares about the outcomes because “nobody hurts.” The idea of lazy workers is not entirely correct, many of them are discouraged due to years of work without implementing adequate solutions.
+            </p>
+
+            <p>
+              Unlike the private sector, where in theory the investor invest in a profitable project and bad decisions return high losses, the desire for well-done work in the public area depends on personal motivation, and money is never scarce.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="next-post">
+      <div class="inner">
+        <h3>Next Post</h3>
+        <h1>
+          A prototype that seeks to be law.
+        </h1>
+      </div>
+    </section>
+
+    <%= require('html-loader!./partials/footer.html') %>
+
+  </body>
+</html>
