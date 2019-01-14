@@ -104,6 +104,12 @@ module.exports = {
       template: './app/src/views/writings-post.html',
       chunks: ['index'],
     }),
+    new HtmlWebpackPlugin({
+      title: 'Work Post',
+      filename: 'work/work-post/index.html',
+      template: './app/src/views/work-post.html',
+      chunks: ['index'],
+    }),
     // new HtmlWebpackPlugin({
     //   title: 'About Page',
     //   filename: 'about.html',

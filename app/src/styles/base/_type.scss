@@ -4,6 +4,10 @@
 a {
   text-decoration: none;
   color: $color-blue;
+
+  &:hover {
+    color: $color-blue--light;
+  }
 }
 
 // -----------------------------------------------------------------------------
