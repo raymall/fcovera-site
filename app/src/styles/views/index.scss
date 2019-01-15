@@ -171,7 +171,7 @@
     @include xy-grid-container;
 
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: nowrap;
     align-content: center;
     align-items: flex-start;
@@ -212,19 +212,161 @@
         margin-bottom: 40px;
       }
     }
+  }
 
-    &.--discovering:before {
-      background: url('../assets/images/icon-discovering.svg') no-repeat center / contain;
+  .--discovering .-title:before {
+    background: url('../assets/images/icon-discovering.svg') no-repeat center / contain;
+  }
+  .--defining .-title:before {
+    background: url('../assets/images/icon-defining.svg') no-repeat center / contain;
+  }
+  .--developing .-title:before {
+    background: url('../assets/images/icon-developing.svg') no-repeat center / contain;
+  }
+
+  .--discovering,
+  .--defining,
+  .--developing {
+    .-gallery {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-content: center;
+      align-items: flex-start;
+      justify-content: flex-start;
+      width: auto;
+      height: 300px;
+      overflow: auto;
+
+      @include breakpoint(small down) {
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        overflow: visible;
+      }
+
+      .-image {
+        display: block;
+        width: auto;
+        height: 100%;
+        margin-right: 20px;
+        background-repeat: no-repeat;
+        background-position: left center;
+        background-size: contain;
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        @include breakpoint(small down) {
+          width: 300px;
+          height: auto;
+          margin-right: 0;
+          margin-bottom: 60px;
+          border-radius: 5px;
+          box-shadow: 0 7px 20px rgba(0, 0, 0, .08);
+          overflow: hidden;
+        }
+      }
     }
-    &.--defining:before {
-      background: url('../assets/images/icon-defining.svg') no-repeat center / contain;
+  }
+
+  .--discovering .-image {
+    &:nth-child(1) {
+      width: 300px; height: 300px;
+      background-image: url('../assets/images/home-discovering-1@large.jpg');
+      @include breakpoint(small down) {
+        width: 300px; height: 420px;
+        align-self: flex-end;
+        margin-right: -30px;
+        background-image: url('../assets/images/home-discovering-1@small.jpg');
+      }
     }
-    &.--developing:before {
-      background: url('../assets/images/icon-developing.svg') no-repeat center / contain;
+    &:nth-child(2) {
+      width: 400px; height: 300px;
+      background-image: url('../assets/images/home-discovering-2@large.jpg');
+      @include breakpoint(small down) {
+        width: 300px; height: 420px;
+        margin-left: -30px;
+        background-image: url('../assets/images/home-discovering-2@small.jpg');
+      }
+    }
+    &:nth-child(3) {
+      width: 600px; height: 300px;
+      background-image: url('../assets/images/home-discovering-3@large.jpg');
+      @include breakpoint(small down) {
+        display: none;
+      }
+    }
+  }
+
+  .--defining .-image {
+    &:nth-child(1) {
+      width: 280px; height: 300px;
+      background-image: url('../assets/images/home-defining-1@large.jpg');
+      @include breakpoint(small down) {
+        width: 300px; height: 420px;
+        margin-left: -30px;
+        background-image: url('../assets/images/home-defining-1@small.jpg');
+      }
+    }
+    &:nth-child(2) {
+      width: 580px; height: 300px;
+      background-image: url('../assets/images/home-defining-2@large.jpg');
+      @include breakpoint(small down) {
+        width: 300px; height: 420px;
+        align-self: flex-end;
+        margin-right: -30px;
+        background-image: url('../assets/images/home-defining-2@small.jpg');
+      }
+    }
+    &:nth-child(3) {
+      width: 420px; height: 300px;
+      background-image: url('../assets/images/home-defining-3@large.jpg');
+      @include breakpoint(small down) {
+        display: none;
+      }
+    }
+  }
+
+  .--developing .-image {
+    &:nth-child(1) {
+      width: 300px; height: 300px;
+      background-image: url('../assets/images/home-developing-1@large.jpg');
+      @include breakpoint(small down) {
+        width: 300px; height: 420px;
+        align-self: flex-end;
+        margin-right: -30px;
+        background-image: url('../assets/images/home-developing-1@small.jpg');
+      }
+    }
+    &:nth-child(2) {
+      width: 500px; height: 300px;
+      background-image: url('../assets/images/home-developing-2@large.jpg');
+      @include breakpoint(small down) {
+        width: 300px; height: 420px;
+        margin-left: -30px;
+        background-image: url('../assets/images/home-developing-2@small.jpg');
+      }
+    }
+    &:nth-child(3) {
+      width: 450px; height: 300px;
+      background-image: url('../assets/images/home-developing-3@large.jpg');
+      @include breakpoint(small down) {
+        display: none;
+      }
     }
   }
 
   .-showcase {
+    width: 200%;
+    height: 300px;
+
+    @include breakpoint(small down) {
+      width: 100%;
+      height: auto;
+    }
+
     p {
       display: none;
 

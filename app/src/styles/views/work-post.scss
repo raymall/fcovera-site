@@ -176,7 +176,11 @@
       height: auto;
 
       @include breakpoint(small down) {
-        width: 100%;
+        position: relative;
+        left: 50%;
+        width: 120%;
+        height: auto;
+        transform: translate(-50%, 0);
       }
     }
 

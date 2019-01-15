@@ -33,7 +33,12 @@
       margin-bottom: 20px;
 
       @include breakpoint(small down) {
+        position: relative;
+        left: 50%;
+        width: 120%;
+        height: auto;
         margin-bottom: 10px;
+        transform: translate(-50%, 0);
       }
     }
 
