@@ -5,61 +5,65 @@
     <%= require('html-loader!./partials/head.html') %>
     <link rel="stylesheet" type="text/css" href="application.css">
   </head>
-  <body>
+  <body class="page --index preload">
     
     <%= require('html-loader!./partials/header.html') %>
 
-    <section class="introduction">
-      <div class="-inner">
-        <div class="description">
-          <p>
-            I'm a Chilean 🇨🇱 User Experience designer working in services and products. I use service-design tools 🔧 and a design thinking approach 🧠 to convert ideas into solutions 💥.
-          </p>
-          <p>
-            Currently, I’m designing a service with <a href="#">The Cocktail</a> for <a href="#">Banco Santander</a>.
-          </p>
-        </div>
-        <div class="last-thought">
-          <div class="-header">
-            <h2>My Last Thought</h2>
-            <a class="--desktop" href="#">See all</a>
-          </div>
-          <article class="-article">
-            <h1>Three years in the public sector</h1>
-            <time datetime="2018-11-16">16th November</time>
-          </article>
-          <a class="--mobile" href="#">See all my posts</a>
+    <div class="container">
+      <div class="inner-container">
+        <div id="swup" class="main-content transition-fade">
+          <section class="introduction">
+            <div class="-inner">
+              <div class="description">
+                <p>
+                  I'm a Chilean 🇨🇱 User Experience designer working in services and products. I use service-design tools 🔧 and a design thinking approach 🧠 to convert ideas into solutions 💥.
+                </p>
+                <p>
+                  Currently, I’m designing a service with <a href="#">The Cocktail</a> for <a href="#">Banco Santander</a>.
+                </p>
+              </div>
+              <div class="last-thought">
+                <div class="-header">
+                  <h2>My Last Thought</h2>
+                  <a class="--desktop" href="/writings/">See all</a>
+                </div>
+                <article class="-article">
+                  <a href="/writings/writings-post/">
+                    <h1>Three years in the public sector</h1>
+                    <time datetime="2018-11-16">16th November</time>
+                  </a>
+                </article>
+                <a class="--mobile" href="/writings/">See all my posts</a>
+              </div>
+            </div>
+          </section>
+
+          <section class="what-i-do">
+            <div class="-inner">
+              <h2 class="-title --discovering">Discovering</h2>
+              <div class="-showcase">
+                <p>
+                  Tools and methodologies applied to rise insights collaboratively with users and stakeholders. Workshops and cultural probes to collect information regarding pains and user behavior.
+                </p>
+              </div>
+              <h2 class="-title --defining">Defining</h2>
+              <div class="-showcase">
+                <p>
+                  Conceptualization of ideas and definitions into maps and models to enable service decisions. Fast prototyping and controlled environment implementations to probe hypothesis.
+                </p>
+              </div>
+              <h2 class="-title --developing">Developing</h2>
+              <div class="-showcase">
+                <p>
+                  Creation and test of digital products and design systems by mockups and prototypes. Usability, guerrilla, and heuristic tests to detect design problems.
+                </p>
+              </div>
+            </div>
+          </section>
         </div>
       </div>
-    </section>
-
-    <section class="what-i-do">
-      <div class="-inner">
-        <h2 class="-title --discovering">Discovering</h2>
-        <div class="-showcase">
-
-        </div>
-        <h2 class="-title --defining">Defining</h2>
-        <div class="-showcase">
-
-        </div>
-        <h2 class="-title --developing">Developing</h2>
-        <div class="-showcase">
-
-        </div>
-      </div>
-    </section>
-
-    <section class="promote">
-      <div class="-inner">
-        <p>
-         <span class="-emoji">☝️</span> check <a href="#">my work</a> to see<br>what I do.
-         <span class="-emoji --contact">👋</span> or <a href="#">let’s talk</a>.
-        </p>
-      </div>
-    </section>
+    </div>
 
     <%= require('html-loader!./partials/footer.html') %>
-
   </body>
 </html>

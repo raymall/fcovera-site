@@ -46,6 +46,7 @@
       @include breakpoint(small down) {
         position: relative;
         width: 125%;
+        top: 5px;
         left: 50%;
         transform: translate3d(-50%, 0, 0);
         float: none;

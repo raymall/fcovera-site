@@ -2,6 +2,8 @@
   position: relative;
   width: 100%;
   padding: 80px 0;
+  background: $color-white;
+  z-index: 1;
 
   @include breakpoint(medium down) {
     padding: 54px 0;
@@ -37,11 +39,20 @@
 
   .-title {
     margin-bottom: 10px;
+    transition: all 800ms cubic-bezier(.17,.89,.3,1.11) 1s;
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
 
     a {
       color: $color-gray;
       text-decoration: none;
     }
+  }
+
+  .-right {
+    transition: all 800ms cubic-bezier(.17,.89,.3,1.11) 1.5s;
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
   }
 
   .-language {
@@ -66,7 +77,13 @@
   }
 
   nav {
+    transition: all 800ms cubic-bezier(.17,.89,.3,1.11) 1.5s;
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+
     a {
+      display: inline-block;
+      position: relative;
       padding: 0 15px;
       font-size: 28px;
       font-weight: lighter;
@@ -79,10 +96,62 @@
         padding-left: 0;
       }
 
+      &:after {
+        display: block;
+        position: absolute;
+        content: '';
+        bottom: -10px;
+        width: 0;
+        height: 6px;
+        overflow: hidden;
+        transition: width 300ms cubic-bezier(0.47, 0, 0.745, 0.715);
+      }
+
+      &.--writings:after {
+        background: url('../assets/images/hover-writings.svg') no-repeat left center;
+        
+        @include breakpoint(small down) {
+          background-size: auto 5px;
+        }
+      }
+      &.--work:after {
+        background: url('../assets/images/hover-work.svg') no-repeat left center;
+
+        @include breakpoint(small down) {
+          background-size: auto 4px;
+        }
+      }
+      &.--me:after {
+        background: url('../assets/images/hover-me.svg') no-repeat left center;
+
+        @include breakpoint(small down) {
+          background-size: auto 5px;
+        }
+      }
+
+      &:hover::after,
+      &:active::after,
+      &.--active:after {
+        width: 100%;
+      }
+
       @include breakpoint(small down) {
         padding: 0 10px;
         font-size: 18px;
       }
     }
+  }
+}
+
+.page.--writings a.--writings:after { width: 100%; }
+.page.--work a.--work:after         { width: 100%; }
+.page.--me a.--me:after             { width: 100%; }
+
+.preload {
+  .header .-title,
+  .header nav,
+  .header .-right {
+    transform: translate3d(0, 50px, 0);
+    opacity: 0;
   }
 }

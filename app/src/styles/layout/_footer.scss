@@ -3,10 +3,6 @@
   width: 100%;
   padding: 70px 0;
 
-  @include breakpoint(small down) {
-    padding: 110px 0 40px;
-  }
-
   .-inner {
     @include xy-grid-container;
 
@@ -54,4 +50,12 @@
   .--linkedin { background-image: url('../assets/images/icon-linkedin.svg'); }
   .--medium   { background-image: url('../assets/images/icon-medium.svg'); }
   .--pocket   { background-image: url('../assets/images/icon-pocket.svg'); }
+}
+
+.--index .footer {
+  @include breakpoint(small down) {
+    position: fixed;
+    bottom: 0;
+    padding: 110px 0 40px;
+  }
 }

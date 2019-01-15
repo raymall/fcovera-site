@@ -5,25 +5,27 @@
     <%= require('html-loader!./partials/head.html') %>
     <link rel="stylesheet" type="text/css" href="../application.css">
   </head>
-  <body>
+  <body class="page --work">
     
     <%= require('html-loader!./partials/header.html') %>
 
-    <section class="work">
-      <div class="-inner">
-        <a href="/work/work-post/" class="-left">
-          <h1>
-            Simplification of a purchase process.
-          </h1>
-          <small>
-            ChileCompra
-          </small>
-        </a>
-        <div class="-right">
-          <img src="../images/me.jpg">
+    <div id="swup" class="main-content transition-fade">
+      <section class="work">
+        <div class="-inner">
+          <a href="/work/work-post/" class="-left">
+            <h1>
+              Simplification of a purchase process.
+            </h1>
+            <small>
+              ChileCompra
+            </small>
+          </a>
+          <div class="-right">
+            <img src="../images/me.jpg">
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
 
     <%= require('html-loader!./partials/footer.html') %>
 

@@ -5,28 +5,30 @@
     <%= require('html-loader!./partials/head.html') %>
     <link rel="stylesheet" type="text/css" href="../application.css">
   </head>
-  <body>
+  <body class="page --writings">
     
     <%= require('html-loader!./partials/header.html') %>
 
-    <section class="writings">
-      <div class="-inner">
-        <a href="/writings/writings-post/" class="-left">
-          <h1>
-            Three years as a civil servant.
-          </h1>
-          <p>
-            A diagnosis of what happens in Chilean’s public sector.
-          </p>
-          <time>
-            16th November
-          </time>
-        </a>
-        <div class="-right">
-          <img src="../images/me.jpg">
+    <div id="swup" class="main-content transition-fade">
+      <section class="writings">
+        <div class="-inner">
+          <a href="/writings/writings-post/" class="-left">
+            <h1>
+              Three years as a civil servant.
+            </h1>
+            <p>
+              A diagnosis of what happens in Chilean’s public sector.
+            </p>
+            <time>
+              16th November
+            </time>
+          </a>
+          <div class="-right">
+            <img src="../images/me.jpg">
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
 
     <%= require('html-loader!./partials/footer.html') %>
 

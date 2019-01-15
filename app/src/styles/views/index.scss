@@ -1,3 +1,29 @@
+.container,
+.main-content {
+  position: relative;
+  background: $color-white;
+  z-index: 1;
+}
+
+.inner-container {
+  transition: all 800ms cubic-bezier(.17,.89,.3,1.11) 1.5s;
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
+}
+
+.preload {
+  .inner-container {
+    transform: translate3d(0, 50px, 0);
+    opacity: 0;
+  }
+}
+
+.--index .main-content {
+  @include breakpoint(small down) {
+    margin-bottom: 650px;
+  }
+}
+
 .introduction {
   position: relative;
   width: 100%;
@@ -30,7 +56,7 @@
 
   @include breakpoint(small down) {
     @include xy-cell(12, false);
-    margin: 110px 0;
+    padding: 110px 0;
   }
 
   p {
@@ -118,13 +144,10 @@
     }
   }
 
-  a {
-    font-size: 15px;
-    text-transform: uppercase;
-  }
-
   a.--desktop {
     display: block;
+    font-size: 15px;
+    text-transform: uppercase;
 
     @include breakpoint(small down) {
       display: none;
@@ -133,6 +156,8 @@
 
   a.--mobile {
     display: none;
+    font-size: 15px;
+    text-transform: uppercase;
 
     @include breakpoint(small down) {
       display: block;
@@ -173,6 +198,8 @@
     color: $color-gray;
 
     @include breakpoint(small down) {
+      margin-top: 140px;
+      margin-bottom: 10px;
       font-weight: normal;
       font-size: 20px;
     }
@@ -203,12 +230,38 @@
       background: url('../assets/images/icon-developing.svg') no-repeat center / contain;
     }
   }
+
+  .-showcase {
+    p {
+      display: none;
+
+      @include breakpoint(small down) {
+        display: block;
+        margin-top: 0;
+        margin-bottom: 140px;
+        font-weight: lighter;
+        font-size: 17px;
+        font-family: $ff-primary;
+        color: $color-gray;
+      }
+    }
+  }
 }
 
 .promote {
+  display: none;
+}
+
+.page.--index .promote {
+  display: block;
   position: relative;
   width: 100%;
   padding: 0;
+
+  @include breakpoint(small down) {
+    position: fixed;
+    bottom: 274px;
+  }
 
   .-inner {
     @include xy-grid-container;
@@ -227,6 +280,7 @@
 
   .-emoji {
     display: inline-block;
+    margin-left: 10px;
     vertical-align: middle;
     font-size: 40px;
 
@@ -235,8 +289,54 @@
       margin: 20px 0;
     }
 
-    &.--contact {
-      margin-left: 10px;
+    &.--point-up {
+      animation: point_up 4s ease-in-out 4s infinite forwards;
+    }
+
+    &.--hello {
+      animation: hello 4s ease-in-out 6s infinite forwards;
+    }
+
+    @keyframes point_up {
+      0% {
+        transform: translate(0, 0);
+      }
+      10% {
+        transform: translate(0, -10px);
+      }
+      20% {
+        transform: translate(0, 0);
+      }
+      30% {
+        transform: translate(0, -10px);
+      }
+      40% {
+        transform: translate(0, 0);
+      }
+      100% {
+        transform: translate(0, 0);
+      }
+    }
+
+    @keyframes hello {
+      0% {
+        transform: rotate(0);
+      }
+      10% {
+        transform: rotate(20deg);
+      }
+      20% {
+        transform: rotate(-10deg);
+      }
+      30% {
+        transform: rotate(20deg);
+      }
+      40% {
+        transform: rotate(0);
+      }
+      100% {
+        transform: rotate(0);
+      }
     }
   }
 
