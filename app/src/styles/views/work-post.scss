@@ -37,8 +37,31 @@
     align-items: flex-start;
     justify-content: space-between;
 
+    @include breakpoint(small down) {
+      flex-direction: column-reverse;
+      width: 100%;
+      padding: 0 30px;
+    }
+
     &:first-child {
       margin-bottom: 110px;
+
+      @include breakpoint(small down) {
+        margin-bottom: 70px;
+      }
+    }
+
+    &:nth-child(2) {
+
+      @include breakpoint(small down) {
+        flex-direction: column;
+      }
+    }
+  }
+
+  .-inner.--content .-right {
+    @include breakpoint(small down) {
+      margin-top: 70px;
     }
   }
 
@@ -46,6 +69,11 @@
     @include xy-cell(4, false);
 
     display: block;
+
+    @include breakpoint(small down) {
+      @include xy-cell(12, false);
+      width: 100%;
+    }
 
     h1 {
       margin: 0;
@@ -55,6 +83,10 @@
       font-family: $ff-secondary;
       letter-spacing: 0.5px;
       color: $color-gray;
+
+      @include breakpoint(small down) {
+        font-size: 25px;
+      }
     }
 
     h3 {
@@ -66,6 +98,11 @@
       letter-spacing: 1px;
       color: $color-gray--light;
 
+      @include breakpoint(small down) {
+        margin-top: 70px;
+        font-size: 13px;
+      }
+
       &:first-child {
         margin-top: 0;
       }
@@ -75,6 +112,10 @@
       display: block;
       margin-bottom: 10px;
       font-size: 20px;
+
+      @include breakpoint(small down) {
+        font-size: 17px;
+      }
     }
 
     p {
@@ -85,9 +126,17 @@
 
     small,
     time {
+      display: block;
       font-size: 15px;
       font-family: $ff-primary;
       color: $color-gray--lighter;
+    }
+
+    small {
+      @include breakpoint(small down) {
+        margin-top: 10px;
+        font-size: 13px;
+      }
     }
 
     ul {
@@ -100,14 +149,24 @@
         margin-bottom: 10px;
         font-size: 20px;
         color: $color-gray;
+
+        @include breakpoint(small down) {
+          font-size: 17px;
+        }
       }
     }
   }
 
   .-right {
-    @include xy-cell(8);
+    @include xy-cell(8, false);
 
     position: relative;
+
+    @include breakpoint(small down) {
+      @include xy-cell(12, false);
+      width: 100%;
+      margin-bottom: 50px;
+    }
     
     > img {
       position: relative;
@@ -115,6 +174,10 @@
       left: 0;
       width: 130%;
       height: auto;
+
+      @include breakpoint(small down) {
+        width: 100%;
+      }
     }
 
     h1 {
@@ -125,6 +188,10 @@
       text-align: left;
       letter-spacing: 0.5px;
       color: $color-gray;
+
+      @include breakpoint(small down) {
+        font-size: 25px;
+      }
     }
 
     h2 {
@@ -134,6 +201,10 @@
       font-family: $ff-secondary;
       letter-spacing: 0.5px;
       color: $color-gray;
+
+      @include breakpoint(small down) {
+        font-size: 22px;
+      }
 
       &:first-child {
         margin-top: 0;
@@ -154,6 +225,10 @@
       font-size: 20px;
       font-family: $ff-primary;
       color: $color-gray;
+
+      @include breakpoint(small down) {
+        font-size: 17px;
+      }
     }
 
     figure {
@@ -204,6 +279,10 @@
     text-align: center;
     letter-spacing: 0.5px;
     color: $color-blue;
+
+    @include breakpoint(small down) {
+      font-size: 22px;
+    }
   }
 
   h3 {
@@ -215,6 +294,10 @@
     text-transform: uppercase;
     letter-spacing: 1px;
     color: $color-gray--light;
+
+    @include breakpoint(small down) {
+      font-size: 13px;
+    }
 
     &:before {
       display: block;

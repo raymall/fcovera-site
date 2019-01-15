@@ -13,16 +13,28 @@
     align-content: center;
     align-items: flex-start;
     justify-content: space-between;
+
+    @include breakpoint(small down) {
+      padding: 0 30px;
+    }
   }
 
   figure {
     padding: 0;
-    margin: 0 0 80px 0;
+    margin: 0 0 60px 0;
+
+    @include breakpoint(small down) {
+      margin-bottom: 50px;
+    }
 
     img {
       width: 100%;
       height: auto;
       margin-bottom: 20px;
+
+      @include breakpoint(small down) {
+        margin-bottom: 10px;
+      }
     }
 
     figcaption {
@@ -41,6 +53,12 @@
     @include xy-cell(8, false);
     @include xy-cell-offset(2);
 
+    @include breakpoint(small down) {
+      @include xy-cell(12, false);
+      @include xy-cell-offset(0);
+      margin: 0;
+    }
+
     h1 {
       margin-bottom: 20px;
       font-weight: lighter;
@@ -49,6 +67,11 @@
       text-align: center;
       letter-spacing: 0.5px;
       color: $color-gray;
+
+      @include breakpoint(small down) {
+        font-size: 25px;
+        margin-bottom: 10px;
+      }
     }
 
     h2 {
@@ -58,6 +81,10 @@
       font-family: $ff-secondary;
       letter-spacing: 0.5px;
       color: $color-gray;
+
+      @include breakpoint(small down) {
+        font-size: 22px;
+      }
     }
 
     time {
@@ -67,6 +94,10 @@
       font-family: $ff-primary;
       text-align: center;
       color: $color-gray--lighter;
+
+      @include breakpoint(small down) {
+        margin-bottom: 50px;
+      }
     }
 
     p {
@@ -74,6 +105,10 @@
       font-size: 20px;
       font-family: $ff-primary;
       color: $color-gray;
+
+      @include breakpoint(small down) {
+        font-size: 17px;
+      }
     }
 
     figure {
@@ -145,6 +180,10 @@
     text-align: center;
     letter-spacing: 0.5px;
     color: $color-blue;
+
+    @include breakpoint(small down) {
+      font-size: 22px;
+    }
   }
 
   h3 {
@@ -156,6 +195,10 @@
     text-transform: uppercase;
     letter-spacing: 1px;
     color: $color-gray--light;
+
+    @include breakpoint(small down) {
+      font-size: 13px;
+    }
 
     &:before {
       display: block;

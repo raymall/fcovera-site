@@ -3,7 +3,7 @@
   <head>
     <title><%= htmlWebpackPlugin.options.title %></title>
     <%= require('html-loader!./partials/head.html') %>
-    <link rel="stylesheet" type="text/css" href="../application.css">
+    <link rel="stylesheet" type="text/css" href="../../application.css">
   </head>
   <body>
     
@@ -20,10 +20,10 @@
           </small>
         </div>
         <div class="-right">
-          <img src="../images/me.jpg">
+          <img src="../../images/me.jpg">
         </div>
       </div>
-      <div class="-inner">
+      <div class="-inner --content">
         <div class="-left">
           <h3>
             Project's Client
@@ -92,12 +92,12 @@
     </section>
 
     <section class="next-project">
-      <div class="inner">
+      <a href="#" class="inner">
         <h3>Next Project</h3>
         <h1>
           Public innovators network.
         </h1>
-      </div>
+      </a>
     </section>
 
     <%= require('html-loader!./partials/footer.html') %>

@@ -3,6 +3,10 @@
   width: 100%;
   padding: 80px 0;
 
+  @include breakpoint(medium down) {
+    padding: 54px 0;
+  }
+
   .-inner {
     @include xy-grid-container;
 
@@ -12,6 +16,7 @@
     align-content: center;
     align-items: flex-start;
     justify-content: space-between;
+    padding: 0 30px;
   }
 
   .-title,
@@ -24,17 +29,40 @@
     text-transform: uppercase;
     letter-spacing: 1px;
     color: $color-gray;
+
+    @include breakpoint(small down) {
+      font-size: 13px;
+    }
   }
 
   .-title {
     margin-bottom: 10px;
+
+    a {
+      color: $color-gray;
+      text-decoration: none;
+    }
   }
 
   .-language {
     text-decoration: none;
     color: $color-blue;
 
-    &--mobile { display: none; }
+    &--desktop {
+      display: block;
+
+      @include breakpoint(small down) {
+        display: none;
+      }
+    }
+
+    &--mobile {
+      display: none;
+
+      @include breakpoint(small down) {
+        display: block;
+      }
+    }
   }
 
   nav {
@@ -49,6 +77,11 @@
 
       &:first-child {
         padding-left: 0;
+      }
+
+      @include breakpoint(small down) {
+        padding: 0 10px;
+        font-size: 18px;
       }
     }
   }

@@ -4,6 +4,10 @@
   padding: 0;
   margin-bottom: 180px;
 
+  @include breakpoint(small down) {
+    margin-bottom: 110px;
+  }
+
   .-inner {
     @include xy-grid-container;
 
@@ -13,11 +17,21 @@
     align-content: center;
     align-items: flex-start;
     justify-content: space-between;
+
+    @include breakpoint(small down) {
+      display: block;
+      padding: 0 30px;
+    }
   }
 }
 
 .description {
   @include xy-cell(7, false);
+
+  @include breakpoint(small down) {
+    @include xy-cell(12, false);
+    margin: 110px 0;
+  }
 
   p {
     width: 90%;
@@ -25,11 +39,19 @@
     &:first-child {
       margin-top: 0;
     }
+
+    @include breakpoint(small down) {
+      width: 100%;
+    }
   }
 }
 
 .last-thought {
   @include xy-cell(5, false);
+
+  @include breakpoint(small down) {
+    @include xy-cell(12, false);
+  }
 
   .-header {
     display: flex;
@@ -41,6 +63,11 @@
 
     margin-bottom: 30px;
 
+    @include breakpoint(small down) {
+      display: block;
+      margin-bottom: 10px;
+    }
+
     h2 {
       margin: 0;
       font-weight: lighter;
@@ -49,22 +76,34 @@
       text-transform: uppercase;
       letter-spacing: 1px;
       color: $color-gray--light;
-    }
 
-    a {
-      font-size: 15px;
-      text-transform: uppercase;
+      @include breakpoint(small down) {
+        font-size: 13px;
+        text-align: center;
+      }
     }
   }
 
   .-article {
+    @include breakpoint(small down) {
+      display: block;
+      padding: 30px 30px;
+      margin: 0 auto;
+      max-width: 320px;
+      background: url('../assets/images/bubble.svg') no-repeat center / contain;
+    }
+
     h1 {
-      margin: 0;
+      margin: 0 0 5px 0;
       font-weight: lighter;
       font-size: 32px;
       font-family: $ff-secondary;
       letter-spacing: 0.5px;
       color: $color-blue;
+
+      @include breakpoint(small down) {
+        font-size: 22px;
+      }
     }
 
     time {
@@ -72,6 +111,34 @@
       font-size: 15px;
       font-family: $ff-primary;
       color: $color-gray--lighter;
+
+      @include breakpoint(small down) {
+        font-size: 13px;
+      }
+    }
+  }
+
+  a {
+    font-size: 15px;
+    text-transform: uppercase;
+  }
+
+  a.--desktop {
+    display: block;
+
+    @include breakpoint(small down) {
+      display: none;
+    }
+  }
+
+  a.--mobile {
+    display: none;
+
+    @include breakpoint(small down) {
+      display: block;
+      margin-top: 10px;
+      font-size: 13px;
+      text-align: center;
     }
   }
 }
@@ -91,6 +158,11 @@
     align-content: center;
     align-items: flex-start;
     justify-content: space-between;
+
+    @include breakpoint(small down) {
+      display: block;
+      padding: 0 30px;
+    }
   }
 
   .-title {
@@ -99,6 +171,11 @@
     font-size: 28px;
     letter-spacing: 0.5px;
     color: $color-gray;
+
+    @include breakpoint(small down) {
+      font-weight: normal;
+      font-size: 20px;
+    }
 
     &:before {
       display: inline-block;
@@ -109,10 +186,21 @@
       height: 38px;
       margin-right: 30px;
       vertical-align: bottom;
+
+      @include breakpoint(small down) {
+        display: block;
+        margin-bottom: 40px;
+      }
     }
 
     &.--discovering:before {
       background: url('../assets/images/icon-discovering.svg') no-repeat center / contain;
+    }
+    &.--defining:before {
+      background: url('../assets/images/icon-defining.svg') no-repeat center / contain;
+    }
+    &.--developing:before {
+      background: url('../assets/images/icon-developing.svg') no-repeat center / contain;
     }
   }
 }
@@ -131,12 +219,21 @@
     align-content: center;
     align-items: center;
     justify-content: space-between;
+
+    @include breakpoint(small down) {
+      padding: 0 30px;
+    }
   }
 
   .-emoji {
     display: inline-block;
     vertical-align: middle;
     font-size: 40px;
+
+    @include breakpoint(small down) {
+      display: block;
+      margin: 20px 0;
+    }
 
     &.--contact {
       margin-left: 10px;
@@ -152,5 +249,20 @@
     text-decoration: none;
     letter-spacing: 0.5px;
     color: $color-gray;
+
+    @include breakpoint(small down) {
+      display: block;
+      width: 100%;
+      font-size: 22px;
+      text-align: center;
+    }
+
+    br {
+      display: none;
+
+      @include breakpoint(small down) {
+        display: block;
+      }
+    }
   }
 }
