@@ -2,6 +2,9 @@
   position: relative;
   width: 100%;
   padding: 70px 0;
+  transition: all 800ms cubic-bezier(.17,.89,.3,1.11) 1.5s;
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
 
   .-inner {
     @include xy-grid-container;
@@ -57,5 +60,12 @@
     position: fixed;
     bottom: 0;
     padding: 110px 0 40px;
+  }
+}
+
+.preload {
+  .footer {
+    transform: translate3d(0, 50px, 0);
+    opacity: 0;
   }
 }
