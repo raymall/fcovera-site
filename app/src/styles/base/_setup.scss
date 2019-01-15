@@ -47,3 +47,7 @@ html.is-animating .transition-fade {
   transform: translate3d(0, 50px, 0);
   opacity: 0;
 }
+
+.main-content {
+  overflow: hidden;
+}
