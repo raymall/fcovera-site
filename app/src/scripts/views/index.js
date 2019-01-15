@@ -5,7 +5,11 @@ const swup = new Swup();
 
 window.addEventListener('load', function() {
   document.querySelector('body').classList.remove('preload');
-}, false )
+}, false);
+
+swup.on('pageView', function () {
+  document.querySelector('body').classList.remove('preload');
+});
 
 // (function() {
 //   printMe();

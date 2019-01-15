@@ -63,6 +63,12 @@
   }
 }
 
+.page.--writings .footer,
+.page.--work .footer,
+.page.--me .footer {
+  display: none;
+}
+
 .preload {
   .footer {
     transform: translate3d(0, 50px, 0);
