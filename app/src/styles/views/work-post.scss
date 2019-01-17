@@ -62,6 +62,7 @@
   .-inner.--content .-right {
     @include breakpoint(small down) {
       margin-top: 70px;
+      margin-bottom: 60px;
     }
   }
 
@@ -253,6 +254,43 @@
   
         span {
           color: $color-blue;
+        }
+      }
+    }
+  }
+
+  .--gallery {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    height: auto;
+    margin-top: 60px;
+
+    @include breakpoint(small down) {
+      margin-top: 0;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 100px;
+      box-shadow: 0 7px 20px rgba(0, 0, 0, .1);
+
+      @include breakpoint(small down) {
+        margin-bottom: 60px;
+
+        &:nth-child(odd) {
+          align-self: flex-end;
+          margin-right: -30px;
+        }
+  
+        &:nth-child(even) {
+          align-self: flex-start;
+          margin-left: -30px;
         }
       }
     }

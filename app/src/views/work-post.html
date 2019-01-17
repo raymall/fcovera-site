@@ -5,13 +5,13 @@
     <%= require('html-loader!./partials/head.html') %>
     <link rel="stylesheet" type="text/css" href="../../application.css">
   </head>
-  <body class="page --work">
+  <body class="page --work-post">
     
     <%= require('html-loader!./partials/header.html') %>
 
-    <div id="swup" class="main-content transition-fade">
+    <div id="swup" class="main-content transition-in">
       <section class="work-post">
-        <div class="-inner">
+        <div class="-inner --intro">
           <div class="-left">
             <h1>
               Quinta Bella. Healthcare Centre for families.
@@ -85,10 +85,10 @@
             </p>
           </div>
         </div>
-        <div class="-inner">
-          <figure>
-            <img src="../../images/me.jpg">
-          </figure>
+        <div class="-inner --gallery">
+          <img src="../../images/me.jpg">
+          <img src="../../images/me.jpg">
+          <img src="../../images/me.jpg">
         </div>
       </section>
 

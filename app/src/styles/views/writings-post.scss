@@ -48,6 +48,10 @@
       text-align: center;
       color: $color-gray--lighter;
 
+      @include breakpoint(small down) {
+        text-align: left;
+      }
+
       span {
         color: $color-blue;
       }
@@ -61,6 +65,8 @@
     @include breakpoint(small down) {
       @include xy-cell(12, false);
       @include xy-cell-offset(0);
+      width: 100%;
+      padding: 0;
       margin: 0;
     }
 
@@ -74,8 +80,9 @@
       color: $color-gray;
 
       @include breakpoint(small down) {
-        font-size: 25px;
         margin-bottom: 10px;
+        font-size: 25px;
+        text-align: left;
       }
     }
 
@@ -94,14 +101,16 @@
 
     time {
       display: block;
-      margin-bottom: 20px;
+      margin-bottom: 60px;
       font-size: 15px;
       font-family: $ff-primary;
       text-align: center;
       color: $color-gray--lighter;
 
       @include breakpoint(small down) {
+        width: 100%;
         margin-bottom: 50px;
+        text-align: left;
       }
     }
 

@@ -7,7 +7,7 @@
 
 .inner-container {
   transition: all 800ms cubic-bezier(.17,.89,.3,1.11) 1.5s;
-  transform: translate3d(0, 0, 0);
+  transform: translate(0, 0);
   opacity: 1;
 }
 
@@ -118,7 +118,7 @@
       font-size: 32px;
       font-family: $ff-secondary;
       letter-spacing: 0.5px;
-      color: $color-blue;
+      // color: $color-blue;
 
       @include breakpoint(small down) {
         font-size: 22px;
@@ -165,7 +165,7 @@
   position: relative;
   width: 100%;
   padding: 0;
-  margin-bottom: 100px;
+  margin-bottom: 80px;
 
   .-inner {
     @include xy-grid-container;
@@ -176,6 +176,11 @@
     align-content: center;
     align-items: flex-start;
     justify-content: space-between;
+    margin-bottom: 40px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
 
     @include breakpoint(small down) {
       display: block;
@@ -264,7 +269,7 @@
           margin-right: 0;
           margin-bottom: 60px;
           border-radius: 5px;
-          box-shadow: 0 7px 20px rgba(0, 0, 0, .08);
+          box-shadow: 0 7px 20px rgba(0, 0, 0, .1);
           overflow: hidden;
         }
       }
@@ -384,7 +389,9 @@
 }
 
 .page.--writings .promote,
+.page.--writings-post .promote,
 .page.--work .promote,
+.page.--work-post .promote,
 .page.--me .promote {
   display: none;
 }
@@ -393,9 +400,9 @@
   display: block;
   position: relative;
   width: 100%;
-  padding: 0;
+  padding: 20px 0 0;
   transition: all 800ms cubic-bezier(.17,.89,.3,1.11) 1.5s;
-  transform: translate3d(0, 0, 0);
+  transform: translate(0, 0);
   opacity: 1;
 
   @include breakpoint(small down) {
@@ -510,7 +517,7 @@
 .preload {
   .inner-container,
   .promote {
-    transform: translate3d(0, 50px, 0);
+    transform: translate(0, 30px);
     opacity: 0;
   }
 }
