@@ -1,3 +1,7 @@
+.--work .main-content {
+  overflow: visible;
+}
+
 .work {
   position: relative;
   width: 100%;
@@ -18,6 +22,14 @@
     align-items: flex-start;
     justify-content: space-between;
 
+    @include breakpoint(medium down) {
+      padding: 0 100px;
+    }
+
+    @media screen and (max-width: 768px) {
+      padding: 0 80px;
+    }
+
     @include breakpoint(small down) {
       flex-direction: column-reverse;
       padding: 0 30px;
@@ -26,6 +38,7 @@
 
   .-left {
     @include xy-cell(4, false);
+    z-index: 1;
 
     display: block;
     text-decoration: none;
@@ -77,40 +90,82 @@
       margin-bottom: 40px;
     }
 
+    .-slider-hidden {
+      position: absolute;
+      width: 100%;
+      top: 0;
+      left: 0;
+    }
     .-slider {
-      width: 110%;
+      width: 100%;
       height: 430px;
+      overflow-x: scroll;
   
       @include breakpoint(small down) {
+        width: 110%;
         height: 240px;
+      }
+    }
+    .-slider-inner {
+      width: 2219px;
+    }
+    .-slides {
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      overflow: hidden;
+    }
+    .-slide {
+      float: left;
+      margin-right: 40px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    .swiper-container {
+      width: 100%;
+      height: 430px;
+    }
+
+    .swiper-slide {
+      background: yellow;
+      // width: 80%;
+
+      &:last-child {
+
       }
     }
 
     .-image {
-      width: 100%;
+      width: 713px;
       height: 430px;
       background-repeat: no-repeat;
-      background-position: center;
+      background-position: left center;
       background-size: cover;
   
   
       @include breakpoint(small down) {
-        width: 100%;
+        width: 260px;
         height: 240px;
+        background-position: left top;
       }
     }
 
     .work1 {
       background-image: url('../assets/images/work-1.jpg');
       @include breakpoint(small down) {
-        background-image: url('../assets/images/work-1@small.jpg');
+        background-image: url('../assets/images/work-1.jpg');
       }
     }
     .work2 {
       background-image: url('../assets/images/work-2.jpg');
-      @include breakpoint(small down) {
-        background-image: url('../assets/images/work-2@small.jpg');
-      }
+      // @include breakpoint(small down) {
+      //   background-image: url('../assets/images/work-2@small.jpg');
+      // }
     }
     .work3 {
       background-image: url('../assets/images/work-3.jpg');

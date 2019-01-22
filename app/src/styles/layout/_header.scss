@@ -1,16 +1,20 @@
 .header {
   position: relative;
   width: 100%;
-  padding: 80px 0 130px;
+  padding: 80px 0 140px;
   background: $color-white;
   z-index: 1;
 
-  @include breakpoint(medium down) {
-    padding: 54px 0;
+  @media screen and (max-width: 768px) {
+    padding: 80px 0 60px;
+  }
+
+  @include breakpoint(small down) {
+    padding: 50px 0 60px;
   }
 
   .-inner {
-    @include xy-grid-container;
+    @include xy-grid-container();
 
     display: flex;
     flex-direction: row;
@@ -19,6 +23,18 @@
     align-items: flex-start;
     justify-content: space-between;
     padding: 0 30px;
+
+    @include breakpoint(medium down) {
+      padding: 0 100px;
+    }
+
+    @media screen and (max-width: 768px) {
+      padding: 0 80px;
+    }
+
+    @include breakpoint(small down) {
+      padding: 0 30px;
+    }
   }
 
   .-title,
@@ -102,35 +118,51 @@
         content: '';
         bottom: -10px;
         width: 0;
-        height: 6px;
+        height: 10px;
         overflow: hidden;
         transition: width 300ms cubic-bezier(0.47, 0, 0.745, 0.715);
       }
 
       &.--writings:after {
-        background: url('../assets/images/hover-writings.svg') no-repeat left center;
+        background: url('../assets/images/hover-writings.svg') no-repeat left center/auto 9px;
+
+        @media screen and (max-width: 768px) {
+          background-size: auto 8px;
+        }
         
         @include breakpoint(small down) {
-          background-size: auto 5px;
+          background-size: auto 6px;
         }
       }
       &.--work:after {
-        background: url('../assets/images/hover-work.svg') no-repeat left center;
+        background: url('../assets/images/hover-work.svg') no-repeat left center/auto 6px;
+
+        @media screen and (max-width: 768px) {
+          background-size: auto 6px;
+        }
 
         @include breakpoint(small down) {
           background-size: auto 4px;
         }
       }
       &.--me:after {
-        background: url('../assets/images/hover-me.svg') no-repeat left center;
+        background: url('../assets/images/hover-me.svg') no-repeat left center/auto 10px;
+
+        @media screen and (max-width: 768px) {
+          background-size: auto 9px;
+        }
 
         @include breakpoint(small down) {
-          background-size: auto 5px;
+          background-size: auto 6px;
         }
       }
 
       &.--active:after {
         width: 100%;
+      }
+
+      @media screen and (max-width: 768px) {
+        font-size: 25px;
       }
 
       @include breakpoint(small down) {

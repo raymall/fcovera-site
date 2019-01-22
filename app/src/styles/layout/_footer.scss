@@ -16,6 +16,14 @@
     align-items: center;
     justify-content: space-between;
 
+    @include breakpoint(medium down) {
+      padding: 0 100px;
+    }
+
+    @media screen and (max-width: 768px) {
+      padding: 0 80px;
+    }
+
     @include breakpoint(small down) {
       display: block;
       padding: 0 10px;
@@ -56,11 +64,11 @@
 }
 
 .--index .footer {
-  @include breakpoint(small down) {
-    position: fixed;
-    bottom: 0;
-    padding: 110px 0 40px;
-  }
+  // @include breakpoint(small down) {
+  //   position: fixed;
+  //   bottom: 0;
+  //   padding: 110px 0 40px;
+  // }
 }
 
 .page.--writings .footer,

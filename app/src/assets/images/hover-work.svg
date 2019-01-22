@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="61px" height="6px" viewBox="0 0 61 6" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="63px" height="6px" viewBox="0 0 63 6" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
     <title>wo-actived</title>
     <desc>Created with Sketch.</desc>
-    <g id="Work" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
-        <g id="e-work" transform="translate(-308.000000, -151.000000)" stroke="#0000CC">
-            <path d="M308,155.660497 C319.017086,152.620788 330.102497,151.47423 341.256234,152.220822 C352.409971,152.967414 361.529291,154.113973 368.614193,155.660497" id="wo-actived"></path>
+    <g id="Work" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round">
+        <g id="l-work" transform="translate(-236.000000, -151.000000)" stroke="#0000CC" stroke-width="1.5">
+            <path d="M237,155.660497 C248.017086,152.620788 259.102497,151.47423 270.256234,152.220822 C281.409971,152.967414 290.529291,154.113973 297.614193,155.660497" id="wo-actived"></path>
         </g>
     </g>
 </svg>

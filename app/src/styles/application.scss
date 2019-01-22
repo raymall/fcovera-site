@@ -1,14 +1,18 @@
 @import 'node_modules/foundation-sites/scss/foundation.scss';
 @include foundation-xy-grid-classes;
 
-// Required Core Stylesheet
-@import "node_modules/@glidejs/glide/src/assets/sass/glide.core";
-// Optional Theme Stylesheet
-@import "node_modules/@glidejs/glide/src/assets/sass/glide.theme";
+// // Required Core Stylesheet
+// @import "node_modules/@glidejs/glide/src/assets/sass/glide.core";
+// // Optional Theme Stylesheet
+// @import "node_modules/@glidejs/glide/src/assets/sass/glide.theme";
+
+@import "../../../node_modules/aos/dist/aos.css";
+@import "../../../node_modules/swiper/dist/css/swiper.css";
 
 // --
 // Utilities
 // --
+@import 'vendors/_settings.scss';
 @import 'utils/_mixins.scss';
 @import 'utils/_functions.scss';
 @import 'utils/_breakpoints.scss';

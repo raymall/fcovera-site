@@ -14,6 +14,14 @@
     align-items: flex-start;
     justify-content: space-between;
 
+    @include breakpoint(medium down) {
+      padding: 0 100px;
+    }
+
+    @media screen and (max-width: 768px) {
+      padding: 0 80px;
+    }
+
     @include breakpoint(small down) {
       padding: 0 30px;
     }

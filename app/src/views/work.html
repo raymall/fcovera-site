@@ -9,10 +9,10 @@
     
     <%= require('html-loader!./partials/header.html') %>
 
-    <div id="swup" class="main-content transition-in">
+    <div id="swup" class="main-content">
       <section class="work">
         <div class="-inner">
-          <a href="/work/work-post/" class="-left">
+          <a href="/work/work-post/" class="-left transition-in">
             <h1>
               Simplification of a purchase process.
             </h1>
@@ -20,23 +20,36 @@
               ChileCompra
             </small>
           </a>
-          <div class="-right">
-            <div class="-slider">
-              <div class="glide">
-                <div class="glide__track" data-glide-el="track">
-                  <ul class="glide__slides">
-                    <li class="glide__slide">
-                      <div class="-image work1"></div>
-                    </li>
-                    <li class="glide__slide">
-                      <div class="-image work2"></div>
-                    </li>
-                    <li class="glide__slide">
-                      <div class="-image work3"></div>
-                    </li>
-                  </ul>
-                </div>
+          <div class="-right transition-in">
+            <!-- <div class="-slider">
+              <div class="-slider-inner">
+                <ul class="-slides">
+                  <li class="-slide">
+                    <div class="-image work1 transition-in"></div>
+                  </li>
+                  <li class="-slide">
+                    <div class="-image work2"></div>
+                  </li>
+                  <li class="-slide">
+                    <div class="-image work3"></div>
+                  </li>
+                </ul>
               </div>
+            </div> -->
+            <div class="-slider-hidden"></div>
+            <div class="-slider">
+            <div class="swiper-container">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide">Slide 1</div>
+                    <div class="swiper-slide">Slide 2</div>
+                    <div class="swiper-slide">Slide 3</div>
+                </div>
+            
+                <!-- If we need scrollbar -->
+                <div class="swiper-scrollbar"></div>
+            </div>
             </div>
           </div>
         </div>

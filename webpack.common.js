@@ -47,7 +47,7 @@ module.exports = {
         ]
       }, 
       {
-        test: /\.(jpe?g|png|gif|svg|ico)$/i,
+        test: /\.(jpe?g|png|gif|svg)$/i,
         use: [{
             loader: 'file-loader',
             options: {
@@ -126,7 +126,10 @@ module.exports = {
           preserve_newlines: false
         }
       }
-    })
+    }),
+    new CopyWebpackPlugin([
+      { from: './app/src/assets/images/favicon', to: './', force: true }
+    ]),
   ],
   output: {
     filename: '[name].bundle.js',

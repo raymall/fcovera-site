@@ -25,6 +25,10 @@ p {
   font-family: $ff-primary;
   color: $color-gray;
 
+  @media screen and (max-width: 768px) {
+    font-size: 18px;
+  }
+
   @include breakpoint(small down) {
     font-size: 16px;
   }

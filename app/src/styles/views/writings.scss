@@ -18,6 +18,14 @@
     align-items: flex-start;
     justify-content: space-between;
 
+    @include breakpoint(medium down) {
+      padding: 0 100px;
+    }
+
+    @media screen and (max-width: 768px) {
+      padding: 0 80px;
+    }
+
     @include breakpoint(small down) {
       flex-direction: column-reverse;
       padding: 0 30px;
@@ -90,10 +98,11 @@
     }
 
     .-slider {
-      width: 110%;
+      width: 135%;
       height: 430px;
   
       @include breakpoint(small down) {
+        width: 110%;
         height: 240px;
       }
     }
