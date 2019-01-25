@@ -76,6 +76,7 @@ const loadFn = function() {
       // console.log(index, value); // passes index + value back!
       dataPost[index].addEventListener('click', function(e) {
         dataSlider[this.getAttribute('data-post')].classList.add('scale');
+        document.querySelector('.swiper-container').classList.add('scale');
         e.preventDefault();
         return false;
       });

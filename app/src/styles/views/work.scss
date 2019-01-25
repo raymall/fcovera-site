@@ -8,6 +8,11 @@
   padding: 0;
   margin-bottom: 50px;
 
+  @media screen and (max-width: 768px) {
+    padding-bottom: 120px;
+    overflow: hidden;
+  }
+
   @include breakpoint(small down) {
     padding-bottom: 120px;
     margin-bottom: 0;
@@ -33,6 +38,7 @@
     }
 
     @media screen and (max-width: 768px) {
+      flex-direction: column-reverse;
       padding: 0 80px;
     }
 
@@ -50,6 +56,10 @@
     text-decoration: none;
     z-index: 2;
 
+    @media screen and (max-width: 768px) {
+      width: 100%;
+    }
+
     @include breakpoint(small down) {
       width: 100%;
     }
@@ -59,7 +69,7 @@
       top: 0;
       right: -40px;
       width: 200%;
-      height: 450px;
+      height: 460px;
       background: $color-white;
     }
 
@@ -98,6 +108,34 @@
       }
     }
 
+    p {
+      margin-bottom: 30px;
+      font-size: 20px;
+      font-family: $ff-primary;
+      color: $color-gray;
+  
+      @media screen and (max-width: 768px) {
+        font-size: 18px;
+      }
+
+      @include breakpoint(small down) {
+        margin-bottom: 20px;
+        font-size: 17px;
+      }
+    }
+
+    time {
+      position: relative;
+      font-size: 15px;
+      font-family: $ff-primary;
+      color: $color-gray--lighter;
+      z-index: 1;
+
+      @include breakpoint(small down) {
+        font-size: 13px;
+      }
+    }
+
     small {
       position: relative;
       display: block;
@@ -124,8 +162,13 @@
 
     position: relative;
 
+    @media screen and (max-width: 768px) {
+      width: 65%;
+      margin-bottom: 70px;
+    }
+
     @include breakpoint(small down) {
-      width: 100%;
+      width: 80%;
       margin-bottom: 40px;
     }
 
@@ -137,85 +180,98 @@
     }
     .-slider {
       width: 100%;
-      height: 430px;
+      // width: 715px;
+      // height: 430px;
+      padding-bottom: calc(430 / 715 * 100%);
       overflow: visible;
   
       @include breakpoint(large down) {
         width: 100%;
-        height: 380px;
+        // width: 630px;
+        // height: 380px;
+        padding-bottom: calc(380 / 630 * 100%);
       }
   
       @include breakpoint(medium down) {
         width: 100%;
-        height: 320px;
+        // width: 530px;
+        // height: 320px;
+        padding-bottom: calc(320 / 530 * 100%);
+      }
+
+      @media screen and (max-width: 768px) {
+        width: 100%;
+        // width: 80%;
+        // width: 390px;
+        // height: 360px;
+        padding-bottom: calc(360 / 390 * 100%);
       }
   
       @include breakpoint(small down) {
-        width: 90%;
-        height: 240px;
+        width: 100%;
+        // width: 90%;
+        // height: 240px;
+        // width: 260px;
+        // height: 240px;
+        padding-bottom: calc(240 / 260 * 100%);
       }
     }
 
     .swiper-container {
-      width: 100%;
-      height: auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
       overflow: visible;
+
+      &.scale {
+        z-index: 2;
+      }
     }
 
     .swiper-wrapper {
       overflow: visible;
     }
 
-    .swiper-slide {
-      transform-origin: left top;
-      transition: transform 300ms linear;
-
-      @media screen and (max-width: 768px) {
-        transform-origin: right top;
-      }
-  
-      @include breakpoint(small down) {
-        transform-origin: 45% top;
-      }
-
-      &.scale {
-        transform: scale(1.42);
-        z-index: 1;
-
-        @media screen and (max-width: 768px) {
-          transform: scale(1.25);
-        }
-  
-        @include breakpoint(small down) {
-          transform: scale(1.2);
-        }
-      }
-
-      &:last-child {
-      }
-    }
-
     .-image {
-      width: 713px;
-      width: 100%;
-      height: 430px;
+      // width: 713px;
+      // width: 100%;
+      // height: 430px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
       background-repeat: no-repeat;
-      background-position: left top;
+      background-position: center top;
       background-size: cover;
-  
+
       @include breakpoint(large down) {
-        width: 100%;
-        height: 380px;
+        // width: 630px;
+        // height: 380px;
+        // padding-bottom: calc(380 / 630 * 100%);
       }
   
       @include breakpoint(medium down) {
-        width: 100%;
-        height: 320px;
+        // width: 530px;
+        // height: 320px;
+        // padding-bottom: calc(320 / 530 * 100%);
+      }
+
+      @media screen and (max-width: 768px) {
+        // width: 390px;
+        // height: 360px;
+        // width: 80%;
+        // padding-bottom: calc(360 / 390 * 100%);
       }
   
       @include breakpoint(small down) {
-        width: 100%;
-        height: 240px;
+        // width: 260px;
+        // height: 240px;
+        // width: 90%;
+        // height: 240px;
+        // padding-bottom: calc(240 / 260 * 100%);
       }
     }
 
@@ -237,7 +293,7 @@
       //   background-image: url('../assets/images/work-3@small.jpg');
       // }
     }
-    
+
 
     .writings1 {
       background-image: url('../assets/images/writings-1.jpg');
@@ -261,6 +317,60 @@
     img {
       position: relative;
       width: auto;
+    }
+  }
+}
+
+
+
+.--writings .swiper-slide {
+  transform-origin: right top;
+  transition: transform 300ms linear;
+
+  @media screen and (max-width: 768px) {
+    transform-origin: left top;
+  }
+
+  @include breakpoint(small down) {
+    transform-origin: left top;
+  }
+
+  &.scale {
+    transform: scale(1.43);
+    z-index: 1;
+
+    @media screen and (max-width: 768px) {
+      transform: scale(1.025) translateX(25%);
+    }
+
+    @include breakpoint(small down) {
+      transform: scale(1.2);
+    }
+  }
+}
+
+.--work .swiper-slide {
+  transform-origin: left top;
+  transition: transform 300ms linear;
+
+  @media screen and (max-width: 768px) {
+    transform-origin: left top;
+  }
+
+  @include breakpoint(small down) {
+    transform-origin: left top;
+  }
+
+  &.scale {
+    transform: scale(1.43);
+    z-index: 1;
+
+    @media screen and (max-width: 768px) {
+      transform: scale(1.025) translateX(25%);
+    }
+
+    @include breakpoint(small down) {
+      transform: scale(1.2);
     }
   }
 }
