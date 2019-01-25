@@ -5,40 +5,71 @@
     <%= require('html-loader!./partials/head.html') %>
     <link rel="stylesheet" type="text/css" href="../application.css">
   </head>
-  <body class="page --writings">
+  <body class="page --writings --blog">
     
     <%= require('html-loader!./partials/header.html') %>
 
-    <div id="swup" class="main-content transition-in">
-      <section class="writings">
+    <div id="swup" class="main-content">
+      <section class="writings blog">
         <div class="-inner">
-          <a href="/writings/writings-post/" class="-left">
-            <h1>
-              Three years as a civil servant.
-            </h1>
-            <p>
-              A diagnosis of what happens in Chilean’s public sector.
-            </p>
-            <time>
-              16th November
-            </time>
-          </a>
+          <div class="-left">
+            <div class="-white-bg"></div>
+            <div class="-posts transition-in">
+            <a class="-post --active" href="/writings/writings-post/">
+              <h1>
+                Three years as a civil servant.
+              </h1>
+              <p>
+                A diagnosis of what happens in Chilean’s public sector.
+              </p>
+              <time>
+                16th November
+              </time>
+            </a>
+            <a class="-post" href="/writings/writings-post/">
+              <h1>
+                Second title
+              </h1>
+              <p>
+                Lorem ipsum dolor sit amet.
+              </p>
+              <time>
+                16th November
+              </time>
+            </a>
+            <a class="-post" href="/writings/writings-post/">
+              <h1>
+                Third title
+              </h1>
+              <p>
+                The quick brown fox jumps over the lazy dog.
+              </p>
+              <time>
+                16th November
+              </time>
+            </a>
+            </div>
+          </div>
           <div class="-right">
-            <div class="-slider transition-in">
-              <div class="glide">
-                <div class="glide__track" data-glide-el="track">
-                  <ul class="glide__slides">
-                    <li class="glide__slide">
-                      <div class="-image writings1"></div>
-                    </li>
-                    <li class="glide__slide">
-                      <div class="-image writings2"></div>
-                    </li>
-                    <li class="glide__slide">
-                      <div class="-image writings3"></div>
-                    </li>
-                  </ul>
+            <div class="-slider-hidden"></div>
+            <div class="-slider">
+              <div class="swiper-container">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                  <!-- Slides -->
+                  <a href="/writings/writings-post/" data-post="0" class="swiper-slide">
+                    <div class="-image writings1"></div>
+                  </a>
+                  <a href="/writings/writings-post/" data-post="1" class="swiper-slide">
+                    <div class="-image writings2"></div>
+                  </a>
+                  <a href="/writings/writings-post/" data-post="2" class="swiper-slide">
+                    <div class="-image writings3"></div>
+                  </a>
                 </div>
+            
+                <!-- If we need scrollbar -->
+                <div class="swiper-scrollbar"></div>
               </div>
             </div>
           </div>

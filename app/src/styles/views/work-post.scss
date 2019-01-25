@@ -36,6 +36,10 @@
     align-content: center;
     align-items: flex-start;
     justify-content: space-between;
+  
+    @include breakpoint(large down) {
+      padding: 0 120px;
+    }
 
     @include breakpoint(medium down) {
       padding: 0 100px;
@@ -199,8 +203,10 @@
       top: 0;
       left: 0;
       // width: 130%;
-      width: auto;
-      height: 600px;
+      // width: auto;
+      // height: 615px;
+      width: 170%;
+      height: auto;
 
       @media screen and (max-width: 768px) {
         position: relative;
@@ -215,8 +221,8 @@
         position: relative;
         left: 50%;
         // width: 120%;
-        width: auto;
-        height: 385px;
+        width: 170%;
+        height: auto;
         transform: translate(-50%, 0);
       }
     }

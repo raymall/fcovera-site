@@ -12,6 +12,14 @@
   padding: 0;
   margin-bottom: 50px;
 
+  @include breakpoint(medium down) {
+    margin-bottom: 0;
+  }
+
+  @media screen and (max-width: 768px) {
+    margin-bottom: 0;
+  }
+
   @include breakpoint(small down) {
     margin-bottom: 0;
   }
@@ -25,12 +33,18 @@
     align-content: center;
     align-items: flex-start;
     justify-content: space-between;
+  
+    @include breakpoint(large down) {
+      padding: 0 120px;
+    }
 
     @include breakpoint(medium down) {
+      flex-direction: column-reverse;
       padding: 0 100px;
     }
 
     @media screen and (max-width: 768px) {
+      flex-direction: column-reverse;
       padding: 0 80px;
     }
 
@@ -44,6 +58,18 @@
     @include xy-cell(6, false);
     
     position: relative;
+
+    @include breakpoint(medium down) {
+      @include xy-cell(10, false);
+      @include xy-cell-offset(1);
+    }
+
+    @media screen and (max-width: 768px) {
+      @include xy-cell(12, false);
+      @include xy-cell-offset(0);
+
+      width: 100%;
+    }
 
     @include breakpoint(small down) {
       @include xy-cell(12, false);
@@ -61,8 +87,22 @@
       transition: transform 100ms ease;
       transform: translateY(0%);
 
+      @include breakpoint(medium down) {
+        top: 5px;
+        right: 0;
+        width: 70%;
+        float: none;
+        transform: translate(0, 0) !important;
+      }
+  
+      @media screen and (max-width: 768px) {
+        top: 5px;
+        right: 0;
+        width: 70%;
+        float: none;
+      }
+
       @include breakpoint(small down) {
-        position: relative;
         width: 125%;
         top: 5px;
         left: 50%;
@@ -75,8 +115,22 @@
   .-right {
     @include xy-cell(6, false);
 
+    @include breakpoint(medium down) {
+      @include xy-cell(10, false);
+      @include xy-cell-offset(1);
+    }
+
+    @media screen and (max-width: 768px) {
+      @include xy-cell(12, false);
+      @include xy-cell-offset(0);
+
+      width: 100%;
+    }
+
     @include breakpoint(small down) {
       @include xy-cell(12, false);
+
+      width: 100%;
     }
 
     h1 {
@@ -98,6 +152,10 @@
       font-size: 20px;
       font-family: $ff-primary;
       color: $color-gray;
+  
+      @media screen and (max-width: 768px) {
+        font-size: 18px;
+      }
 
       @include breakpoint(small down) {
         margin-bottom: 40px;

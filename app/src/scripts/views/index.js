@@ -1,17 +1,13 @@
 import Swup from 'swup';
-// import Glide, { Controls, Breakpoints } from '@glidejs/glide/dist/glide.modular.esm'
-// import Glide, { Breakpoints, Build, Clones, Gaps, Keyboard, Move, Peek, Run, Swipe, Transition, Translate } from '@glidejs/glide';
-import Glide from '@glidejs/glide';
 import AOS from 'aos';
 import Swiper from 'swiper';
-// import Glide, { Breakpoints, Build, Clones, Gaps, Keyboard, Move, Peek, Run, Swipe, Transition, Translate } from '@glidejs/glide/dist/glide.modular.esm';
 // import printMe from './me.js';
   
 const swup = new Swup({
-  debugMode: true
+  debugMode: false
 });
 
-var homeInt;
+let homepageGalleryInt;
 
 const bodyElem = document.querySelector('body');
 
@@ -25,69 +21,68 @@ var forEach = function (array, callback, scope) {
 const loadFn = function() {
   bodyElem.classList.remove('preload');
 
-  // var glide = new Glide('.glide', {
-  //   type: 'carousel',
-  //   startAt: 0,
-  //   focusAt: 0,
-  //   gap: 40,
-  //   autoplay: false,
-  //   hoverpause: true,
-  //   peek: { before: 0, after: 140 },
-  //   breakpoints: {
-  //     640: {
-  //       gap: 30,
-  //       peek: { before: 0, after: 60 },
-  //     }
-  //   }
-  // });
-  
-  // glide.on('run.before', function(e) {
-  //   // console.log('run.before');
-  //   console.log(e);
-  // });
-  // glide.on('run', function() {
-  //   console.log('run');
-  // });
-  // glide.on('run.after', function(e) {
-  //   // console.log('run.after');
-  //   console.log(e);
-  // });
-  // glide.on('move', function(e) {
-  //   // console.log('move');
-  //   // console.log(e);
-  // });
-  // glide.on('move.after', function(e) {
-  //   // console.log('move.after');
-  //   // console.log(e);
-  // });
-
   if (bodyElem.classList.contains('--work') || bodyElem.classList.contains('--writings')) {
-    // console.log('mounted');
-    // glide.mount();
-    var innerElem = document.querySelector('.-inner').getBoundingClientRect().left;
-    var rightElem = document.querySelector('.-slider-hidden').getBoundingClientRect().width;
-    document.querySelector('.-slider').style.width = 'calc(100% + ' + (innerElem + 15) + 'px)';
-    
-    const slides = document.querySelectorAll('.swiper-slide');
-    forEach(slides, function (index, value) {
-      console.log(index, value); // passes index + value back!
-      slides[index].style.width = rightElem + 'px';
-    });
 
     var mySwiper = new Swiper('.swiper-container', {
       slidesPerView: 'auto',
       spaceBetween: 40,
       mousewheel: true,
+      simulateTouch: true,
       scrollbar: {
         el: '.swiper-scrollbar',
         hide: true,
       },
+      breakpoints: {
+        640: {
+          spaceBetween: 30,
+        },
+      }
     });
-    console.log(document.querySelector('.-right').getBoundingClientRect())
-    // var rightElem = document.querySelector('.-right').offsetLeft - document.querySelector('.-right').width;
+
+    // mySwiper.on('slideChange', function (e) {
+    //   console.log(e);
+    // });
+
+    var currentSlide = mySwiper.activeIndex;
+    var slideQty = mySwiper.slides.length;
+    var slideText = document.querySelectorAll('.-post');
+    // var progressDivider = ((slideQty - 1) / 2);
+    // mySwiper.on('progress', function (e) {
+    //   currentSlide = mySwiper.activeIndex;
+    //   console.log(currentSlide, slideQty);
+    // });
+    // mySwiper.on('slideChangeTransitionEnd', function (e) {
+    //   currentSlide = mySwiper.activeIndex;
+    //   console.log("Transition End: " + currentSlide);
+    // });
+    mySwiper.on('touchStart', function () {
+      currentSlide = mySwiper.activeIndex;
+      console.log('touchStart', currentSlide);
+      slideText[currentSlide].classList.remove('--active');
+    });
+    mySwiper.on('slideChangeTransitionStart', function () {
+      console.log('slideChangeTransitionStart', currentSlide);
+      slideText[currentSlide].classList.remove('--active');
+    });
+    mySwiper.on('transitionEnd', function () {
+      currentSlide = mySwiper.activeIndex;
+      console.log('transitionEnd', currentSlide);
+      slideText[currentSlide].classList.add('--active');
+    });
+
+    var dataPost = document.querySelectorAll('[data-post]');
+    var dataSlider = document.querySelectorAll('.swiper-slide');
+    forEach(dataPost, function (index, value) {
+      // console.log(index, value); // passes index + value back!
+      dataPost[index].addEventListener('click', function(e) {
+        dataSlider[this.getAttribute('data-post')].classList.add('scale');
+        e.preventDefault();
+        return false;
+      });
+    });
   }
 
-  if (bodyElem.classList.contains('--me') || bodyElem.classList.contains('--writings')) {
+  if (bodyElem.classList.contains('--me')) {
     var s = document.getElementById("floater");
     function parallax() {
       var yPos = 0 - window.pageYOffset/40;	
@@ -101,7 +96,7 @@ const loadFn = function() {
 
   if (bodyElem.classList.contains('--index')) {
     var currentIndex = 0;
-    homeInt = setInterval(function() {
+    homepageGalleryInt = setInterval(function() {
       if (currentIndex == 0) {
         currentIndex = 1;
         document.querySelector('.--discovering').classList.add('fadeIn');
@@ -120,11 +115,15 @@ const loadFn = function() {
       }
     }, 6000);
   } else {
-    clearInterval(homeInt);
+    clearInterval(homepageGalleryInt);
   }
 }
 
+
 swup.on('pageView', loadFn);
+// swup.on('animationOutStart', function() {
+//   document.querySelector('.-slider').style.overflow = 'hidden';
+// });
 window.addEventListener('load', loadFn, false);
 AOS.init({
   // Global settings:
@@ -143,7 +142,7 @@ AOS.init({
   delay: 0, // values from 0 to 3000, with step 50ms
   duration: 800, // values from 0 to 3000, with step 50ms
   easing: 'ease', // default easing for AOS animations
-  once: false, // whether animation should happen only once - while scrolling down
+  once: true, // whether animation should happen only once - while scrolling down
   mirror: false, // whether elements should animate out while scrolling past them
   anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
 });

@@ -5,51 +5,63 @@
     <%= require('html-loader!./partials/head.html') %>
     <link rel="stylesheet" type="text/css" href="../application.css">
   </head>
-  <body class="page --work">
+  <body class="page --work --blog">
     
     <%= require('html-loader!./partials/header.html') %>
 
     <div id="swup" class="main-content">
-      <section class="work">
+      <section class="work blog">
         <div class="-inner">
-          <a href="/work/work-post/" class="-left transition-in">
-            <h1>
-              Simplification of a purchase process.
-            </h1>
-            <small>
-              ChileCompra
-            </small>
-          </a>
-          <div class="-right transition-in">
-            <!-- <div class="-slider">
-              <div class="-slider-inner">
-                <ul class="-slides">
-                  <li class="-slide">
-                    <div class="-image work1 transition-in"></div>
-                  </li>
-                  <li class="-slide">
-                    <div class="-image work2"></div>
-                  </li>
-                  <li class="-slide">
-                    <div class="-image work3"></div>
-                  </li>
-                </ul>
-              </div>
-            </div> -->
+          <div class="-left">
+            <div class="-white-bg"></div>
+            <div class="posts transition-in">
+            <a href="/work/work-post/" data-post="0" class="-post --active">
+              <h1>
+                Simplification of a purchase process.
+              </h1>
+              <small>
+                ChileCompra
+              </small>
+            </a>
+            <a href="/work/work-post/" data-post="1" class="-post">
+              <h1>
+                Another title
+              </h1>
+              <small>
+                Another small text
+              </small>
+            </a>
+            <a href="/work/work-post/" data-post="2" class="-post">
+              <h1>
+                Third title
+              </h1>
+              <small>
+                Another small text
+              </small>
+            </a>
+            </div>
+          </div>
+          <div class="-right">
             <div class="-slider-hidden"></div>
             <div class="-slider">
-            <div class="swiper-container">
+              <div class="swiper-container">
                 <!-- Additional required wrapper -->
                 <div class="swiper-wrapper">
-                    <!-- Slides -->
-                    <div class="swiper-slide">Slide 1</div>
-                    <div class="swiper-slide">Slide 2</div>
-                    <div class="swiper-slide">Slide 3</div>
+                  <!-- Slides -->
+                  <a href="/work/work-post/" data-post="0" class="swiper-slide">
+                    <div class="-image work1"></div>
+                  </a>
+                  <a href="/work/work-post/" data-post="1" class="swiper-slide">
+                    <div class="-image work2"></div>
+                  </a>
+                  <a href="/work/work-post/" data-post="2" class="swiper-slide">
+                    <div class="-image work3"></div>
+                  </a>
                 </div>
             
                 <!-- If we need scrollbar -->
                 <div class="swiper-scrollbar"></div>
-            </div>
+              </div>
             </div>
           </div>
         </div>
