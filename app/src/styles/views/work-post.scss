@@ -224,16 +224,12 @@
       position: relative;
       top: 0;
       left: 0;
-      // width: 130%;
-      // width: auto;
-      // height: 615px;
       width: 170%;
       height: auto;
 
       @media screen and (max-width: 768px) {
         position: relative;
         left: 50%;
-        // width: 120%;
         width: 100%;
         height: auto;
         transform: translate(-50%, 0);
@@ -242,7 +238,6 @@
       @include breakpoint(small down) {
         position: relative;
         left: 50%;
-        // width: 120%;
         width: 170%;
         height: auto;
         transform: translate(-50%, 0);

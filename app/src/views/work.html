@@ -15,6 +15,12 @@
           <div class="-left">
             <div class="-white-bg"></div>
             <div class="posts transition-in">
+              <!-- BEGIN: Work Post Content -->
+              <!--
+                - First post must have class '--active'
+                - 'href' attribute to be replaced to the actual post URL
+                - All posts must have 'data-post' attribute starting with '0' and so on
+              -->
               <a href="/work/work-post/" data-post="0" class="-post --active">
                 <h1>
                   Simplification of a purchase process.
@@ -23,6 +29,7 @@
                   ChileCompra
                 </small>
               </a>
+              <!-- END: Work Post Content -->
               <a href="/work/work-post/" data-post="1" class="-post">
                 <h1>
                   Another title
@@ -45,12 +52,17 @@
             <div class="-slider-hidden"></div>
             <div class="-slider">
               <div class="swiper-container">
-                <!-- Additional required wrapper -->
                 <div class="swiper-wrapper">
                   <!-- Slides -->
+                  <!-- BEGIN: Work Post Image -->
+                  <!--
+                    - 'href' attribute to be replaced to the actual post URL
+                    - All posts must have 'data-post' attribute starting with '0' and so on
+                  -->
                   <a href="/work/work-post/" data-post="0" class="swiper-slide">
                     <div class="-image work1"></div>
                   </a>
+                  <!-- END: Work Post Image -->
                   <a href="/work/work-post/" data-post="1" class="swiper-slide">
                     <div class="-image work2"></div>
                   </a>
@@ -59,7 +71,6 @@
                   </a>
                 </div>
             
-                <!-- If we need scrollbar -->
                 <div class="swiper-scrollbar"></div>
               </div>
             </div>

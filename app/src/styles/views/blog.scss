@@ -242,32 +242,32 @@
       background-position: center top;
       background-size: cover;
 
-      @include breakpoint(large down) {
-        // width: 630px;
-        // height: 380px;
-        // padding-bottom: calc(380 / 630 * 100%);
-      }
+      // @include breakpoint(large down) {
+      //   width: 630px;
+      //   height: 380px;
+      //   padding-bottom: calc(380 / 630 * 100%);
+      // }
   
-      @include breakpoint(medium down) {
-        // width: 530px;
-        // height: 320px;
-        // padding-bottom: calc(320 / 530 * 100%);
-      }
+      // @include breakpoint(medium down) {
+      //   width: 530px;
+      //   height: 320px;
+      //   padding-bottom: calc(320 / 530 * 100%);
+      // }
 
-      @media screen and (max-width: 768px) {
-        // width: 390px;
-        // height: 360px;
-        // width: 80%;
-        // padding-bottom: calc(360 / 390 * 100%);
-      }
+      // @media screen and (max-width: 768px) {
+      //   width: 390px;
+      //   height: 360px;
+      //   width: 80%;
+      //   padding-bottom: calc(360 / 390 * 100%);
+      // }
   
-      @include breakpoint(small down) {
-        // width: 260px;
-        // height: 240px;
-        // width: 90%;
-        // height: 240px;
-        // padding-bottom: calc(240 / 260 * 100%);
-      }
+      // @include breakpoint(small down) {
+      //   width: 260px;
+      //   height: 240px;
+      //   width: 90%;
+      //   height: 240px;
+      //   padding-bottom: calc(240 / 260 * 100%);
+      // }
     }
 
     .work1 {

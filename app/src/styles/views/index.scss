@@ -11,12 +11,6 @@
   opacity: 1;
 }
 
-// .--index .main-content {
-//   @include breakpoint(small down) {
-//     margin-bottom: 650px;
-//   }
-// }
-
 .introduction {
   position: relative;
   width: 100%;
@@ -320,10 +314,6 @@
   .--developing {
     @include xy-cell(4, false);
     position: relative;
-    // top: 0;
-    // left: 0;
-    // width: 100%;
-    // height: auto;
 
     @media screen and (max-width: 768px) {
       @include xy-cell(12, true);
@@ -338,28 +328,6 @@
       width: 100%;
       margin: 0;
     }
-    
-    // & > div {
-    //   @include xy-grid-container;
-  
-    //   @include breakpoint(large down) {
-    //     padding: 0 120px;
-    //   }
-
-    //   @include breakpoint(medium down) {
-    //     padding: 0 100px;
-    //   }
-
-    //   @media screen and (max-width: 768px) {
-    //     padding: 0 80px;
-    //   }
-
-    //   @include breakpoint(small down) {
-    //     position: relative;
-    //     top: auto;
-    //     padding: 0 30px;
-    //   }
-    // }
   }
 
   .-gallery {
@@ -557,11 +525,6 @@
   transition: all 800ms cubic-bezier(.17,.89,.3,1.11) 1.5s;
   transform: translate(0, 0);
   opacity: 1;
-
-  // @include breakpoint(small down) {
-  //   position: fixed;
-  //   bottom: 274px;
-  // }
 
   .-inner {
     @include xy-grid-container;

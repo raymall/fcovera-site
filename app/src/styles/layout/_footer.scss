@@ -67,14 +67,6 @@
   .--pocket   { background-image: url('../assets/images/icon-pocket.svg'); }
 }
 
-.--index .footer {
-  // @include breakpoint(small down) {
-  //   position: fixed;
-  //   bottom: 0;
-  //   padding: 110px 0 40px;
-  // }
-}
-
 .page.--writings .footer,
 .page.--work .footer,
 .page.--me .footer {

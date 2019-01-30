@@ -53,10 +53,12 @@
 
     .-image {
       width: 100%;
-      // height: auto;
       padding-bottom: calc(492 / 814 * 100%);
       margin-bottom: 20px;
-      background: url('../assets/images/writings-1.jpg') no-repeat center top / cover;
+      background-repeat: no-repeat;
+      background-position: center top;
+      background-size: cover;
+      background-image: url('../assets/images/writings-1.jpg');
 
       @media screen and (max-width: 768px) {
         padding-bottom: calc(463 / 500 * 100%);
