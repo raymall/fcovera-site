@@ -39,22 +39,9 @@ const loadFn = function() {
       }
     });
 
-    // mySwiper.on('slideChange', function (e) {
-    //   console.log(e);
-    // });
-
     var currentSlide = mySwiper.activeIndex;
-    var slideQty = mySwiper.slides.length;
     var slideText = document.querySelectorAll('.-post');
-    // var progressDivider = ((slideQty - 1) / 2);
-    // mySwiper.on('progress', function (e) {
-    //   currentSlide = mySwiper.activeIndex;
-    //   console.log(currentSlide, slideQty);
-    // });
-    // mySwiper.on('slideChangeTransitionEnd', function (e) {
-    //   currentSlide = mySwiper.activeIndex;
-    //   console.log("Transition End: " + currentSlide);
-    // });
+
     mySwiper.on('touchStart', function () {
       currentSlide = mySwiper.activeIndex;
       console.log('touchStart', currentSlide);
@@ -73,7 +60,6 @@ const loadFn = function() {
     var dataPost = document.querySelectorAll('[data-post]');
     var dataSlider = document.querySelectorAll('.swiper-slide');
     forEach(dataPost, function (index, value) {
-      // console.log(index, value); // passes index + value back!
       dataPost[index].addEventListener('click', function(e) {
         
         forEach(dataSlider, function (index, value) {
@@ -99,36 +85,37 @@ const loadFn = function() {
     });
   }
 
-  // if (bodyElem.classList.contains('--index')) {
-  //   var currentIndex = 0;
-  //   homepageGalleryInt = setInterval(function() {
-  //     if (currentIndex == 0) {
-  //       currentIndex = 1;
-  //       document.querySelector('.--discovering').classList.add('fadeIn');
-  //       document.querySelector('.--defining').classList.remove('fadeIn');
-  //       document.querySelector('.--developing').classList.remove('fadeIn');
-  //     } else if (currentIndex == 1) {
-  //       currentIndex = 2;
-  //       document.querySelector('.--discovering').classList.remove('fadeIn');
-  //       document.querySelector('.--defining').classList.add('fadeIn');
-  //       document.querySelector('.--developing').classList.remove('fadeIn');
-  //     } else if (currentIndex == 2) {
-  //       currentIndex = 0;
-  //       document.querySelector('.--discovering').classList.remove('fadeIn');
-  //       document.querySelector('.--defining').classList.remove('fadeIn');
-  //       document.querySelector('.--developing').classList.add('fadeIn');
-  //     }
-  //   }, 6000);
-  // } else {
-  //   clearInterval(homepageGalleryInt);
-  // }
+  if (bodyElem.classList.contains('--index')) {
+    var currentIndex = 0;
+    var discoveringGallery = document.querySelector('.--desktop .--discovering');
+    var definingGallery = document.querySelector('.--desktop .--defining');
+    var developingGallery = document.querySelector('.--desktop .--developing');
+    homepageGalleryInt = setInterval(function() {
+      if (currentIndex == 0) {
+        currentIndex = 1;
+        discoveringGallery.classList.remove('--fade-in');
+        definingGallery.classList.add('--fade-in');
+        developingGallery.classList.remove('--fade-in');
+      } else if (currentIndex == 1) {
+        currentIndex = 2;
+        discoveringGallery.classList.remove('--fade-in');
+        definingGallery.classList.remove('--fade-in');
+        developingGallery.classList.add('--fade-in');
+      } else if (currentIndex == 2) {
+        currentIndex = 0;
+        discoveringGallery.classList.add('--fade-in');
+        definingGallery.classList.remove('--fade-in');
+        developingGallery.classList.remove('--fade-in');
+      }
+    }, 6000);
+  } else {
+    clearInterval(homepageGalleryInt);
+  }
 }
 
 
 swup.on('pageView', loadFn);
-// swup.on('animationOutStart', function() {
-//   document.querySelector('.-slider').style.overflow = 'hidden';
-// });
+
 window.addEventListener('load', loadFn, false);
 AOS.init({
   // Global settings:

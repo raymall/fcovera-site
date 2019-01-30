@@ -45,6 +45,12 @@
       margin-bottom: 50px;
     }
 
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
     .-image {
       width: 100%;
       // height: auto;
@@ -113,7 +119,6 @@
 
     h1 {
       margin-bottom: 20px;
-      font-weight: lighter;
       font-size: 42px;
       font-family: $ff-secondary;
       text-align: center;
@@ -133,7 +138,6 @@
 
     h2 {
       margin: 60px 0 0 0;
-      font-weight: lighter;
       font-size: 32px;
       font-family: $ff-secondary;
       letter-spacing: 0.5px;
@@ -189,7 +193,6 @@
 
     h1 {
       margin: 0;
-      font-weight: lighter;
       font-size: 42px;
       line-height: 1.25;
       font-family: $ff-secondary;
@@ -242,7 +245,6 @@
 
   h1 {
     margin-top: 0;
-    font-weight: lighter;
     font-size: 32px;
     font-family: $ff-secondary;
     text-align: center;
@@ -256,7 +258,6 @@
 
   h3 {
     display: block;
-    font-weight: lighter;
     font-size: 15px;
     font-family: $ff-secondary;
     text-align: center;
