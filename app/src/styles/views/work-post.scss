@@ -83,8 +83,14 @@
 
   .-inner.--content .-right {
     @include breakpoint(small down) {
-      margin-top: 70px;
+      margin-top: 0;
       margin-bottom: 60px;
+    }
+  }
+
+  .-inner.--content .-left {
+    @media screen and (max-width: 768px) {
+      margin-bottom: 70px;
     }
   }
 
@@ -120,7 +126,7 @@
 
     h3 {
       margin: 60px 0 15px 0;
-      font-size: 15px;
+      font-size: 22px;
       font-family: $ff-secondary;
       text-transform: uppercase;
       letter-spacing: 1px;
@@ -128,7 +134,7 @@
 
       @include breakpoint(small down) {
         margin-top: 70px;
-        font-size: 13px;
+        font-size: 18px;
       }
 
       &:first-child {
