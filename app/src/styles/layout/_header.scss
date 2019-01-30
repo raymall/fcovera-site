@@ -111,6 +111,18 @@
       text-decoration: none;
       letter-spacing: 0.5px;
       color: $color-blue;
+  
+      @include breakpoint(large down) {
+        font-size: 29px;
+      }
+      @media screen and (max-width: 768px) {
+        font-size: 25px;
+      }
+
+      @include breakpoint(small down) {
+        padding: 0 10px;
+        font-size: 21px;
+      }
 
       &:first-child {
         padding-left: 0;
@@ -135,7 +147,7 @@
         }
         
         @include breakpoint(small down) {
-          background-size: auto 6px;
+          background-size: auto 7px;
         }
       }
       &.--work:after {
@@ -146,7 +158,7 @@
         }
 
         @include breakpoint(small down) {
-          background-size: auto 4px;
+          background-size: auto 4.5px;
         }
       }
       &.--me:after {
@@ -157,21 +169,12 @@
         }
 
         @include breakpoint(small down) {
-          background-size: auto 6px;
+          background-size: auto 7px;
         }
       }
 
       &.--active:after {
         width: 100%;
-      }
-
-      @media screen and (max-width: 768px) {
-        font-size: 25px;
-      }
-
-      @include breakpoint(small down) {
-        padding: 0 10px;
-        font-size: 18px;
       }
     }
   }

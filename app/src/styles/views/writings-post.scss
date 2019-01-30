@@ -35,20 +35,33 @@
     padding: 0;
     margin: 0 0 60px 0;
 
+    @media screen and (max-width: 768px) {
+      width: 80%;
+      padding: 0;
+    }
+
     @include breakpoint(small down) {
+      width: 100%;
       margin-bottom: 50px;
     }
 
-    img {
+    .-image {
       width: 100%;
-      height: auto;
+      // height: auto;
+      padding-bottom: calc(492 / 814 * 100%);
       margin-bottom: 20px;
+      background: url('../assets/images/writings-1.jpg') no-repeat center top / cover;
+
+      @media screen and (max-width: 768px) {
+        padding-bottom: calc(463 / 500 * 100%);
+      }
 
       @include breakpoint(small down) {
         position: relative;
         left: 50%;
-        width: 150%;
+        width: 125%;
         height: auto;
+        padding-bottom: calc(463 / 400 * 100%);
         margin-bottom: 10px;
         transform: translate(-50%, 0);
       }
@@ -60,6 +73,10 @@
       text-align: center;
       color: $color-gray--lighter;
 
+      @media screen and (max-width: 768px) {
+        text-align: left;
+      }
+
       @include breakpoint(small down) {
         text-align: left;
       }
@@ -70,9 +87,21 @@
     }
   }
 
+  article {
+    width: 100%;
+  }
+
   .-content {
-    @include xy-cell(8, false);
-    @include xy-cell-offset(2);
+    @include xy-cell(10, false);
+    @include xy-cell-offset(1);
+
+    @media screen and (max-width: 768px) {
+      @include xy-cell(12, false);
+      @include xy-cell-offset(0);
+      width: 100%;
+      padding: 0;
+      margin: 0;
+    }
 
     @include breakpoint(small down) {
       @include xy-cell(12, false);
@@ -90,6 +119,10 @@
       text-align: center;
       letter-spacing: 0.5px;
       color: $color-gray;
+
+      @media screen and (max-width: 768px) {
+        text-align: left;
+      }
 
       @include breakpoint(small down) {
         margin-bottom: 10px;
@@ -119,9 +152,14 @@
       text-align: center;
       color: $color-gray--lighter;
 
+      @media screen and (max-width: 768px) {
+        text-align: left;
+      }
+
       @include breakpoint(small down) {
         width: 100%;
         margin-bottom: 50px;
+        font-size: 13px;
         text-align: left;
       }
     }
@@ -131,6 +169,10 @@
       font-size: 20px;
       font-family: $ff-primary;
       color: $color-gray;
+
+      @media screen and (max-width: 768px) {
+        font-size: 18px;
+      }
 
       @include breakpoint(small down) {
         font-size: 17px;
@@ -232,6 +274,12 @@
       margin: 0 auto 10px;
       font-size: 40px;
       color: black;
+    }
+  }
+
+  &:hover {
+    h1 {
+      color: $color-blue--light;
     }
   }
 }

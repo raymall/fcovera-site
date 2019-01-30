@@ -75,6 +75,10 @@ const loadFn = function() {
     forEach(dataPost, function (index, value) {
       // console.log(index, value); // passes index + value back!
       dataPost[index].addEventListener('click', function(e) {
+        
+        forEach(dataSlider, function (index, value) {
+          dataSlider[index].classList.add('fade-out');
+        });
         dataSlider[this.getAttribute('data-post')].classList.add('scale');
         document.querySelector('.swiper-container').classList.add('scale');
         e.preventDefault();
@@ -95,29 +99,29 @@ const loadFn = function() {
     });
   }
 
-  if (bodyElem.classList.contains('--index')) {
-    var currentIndex = 0;
-    homepageGalleryInt = setInterval(function() {
-      if (currentIndex == 0) {
-        currentIndex = 1;
-        document.querySelector('.--discovering').classList.add('fadeIn');
-        document.querySelector('.--defining').classList.remove('fadeIn');
-        document.querySelector('.--developing').classList.remove('fadeIn');
-      } else if (currentIndex == 1) {
-        currentIndex = 2;
-        document.querySelector('.--discovering').classList.remove('fadeIn');
-        document.querySelector('.--defining').classList.add('fadeIn');
-        document.querySelector('.--developing').classList.remove('fadeIn');
-      } else if (currentIndex == 2) {
-        currentIndex = 0;
-        document.querySelector('.--discovering').classList.remove('fadeIn');
-        document.querySelector('.--defining').classList.remove('fadeIn');
-        document.querySelector('.--developing').classList.add('fadeIn');
-      }
-    }, 6000);
-  } else {
-    clearInterval(homepageGalleryInt);
-  }
+  // if (bodyElem.classList.contains('--index')) {
+  //   var currentIndex = 0;
+  //   homepageGalleryInt = setInterval(function() {
+  //     if (currentIndex == 0) {
+  //       currentIndex = 1;
+  //       document.querySelector('.--discovering').classList.add('fadeIn');
+  //       document.querySelector('.--defining').classList.remove('fadeIn');
+  //       document.querySelector('.--developing').classList.remove('fadeIn');
+  //     } else if (currentIndex == 1) {
+  //       currentIndex = 2;
+  //       document.querySelector('.--discovering').classList.remove('fadeIn');
+  //       document.querySelector('.--defining').classList.add('fadeIn');
+  //       document.querySelector('.--developing').classList.remove('fadeIn');
+  //     } else if (currentIndex == 2) {
+  //       currentIndex = 0;
+  //       document.querySelector('.--discovering').classList.remove('fadeIn');
+  //       document.querySelector('.--defining').classList.remove('fadeIn');
+  //       document.querySelector('.--developing').classList.add('fadeIn');
+  //     }
+  //   }, 6000);
+  // } else {
+  //   clearInterval(homepageGalleryInt);
+  // }
 }
 
 
