@@ -60,6 +60,10 @@
     &:first-child {
       margin-bottom: 110px;
 
+      @media screen and (max-width: 768px) {
+        margin-bottom: 70px;
+      }
+
       @include breakpoint(small down) {
         margin-bottom: 70px;
       }
@@ -92,12 +96,13 @@
     @media screen and (max-width: 768px) {
       @include xy-cell(12, false);
       width: 100%;
-      margin-bottom: 60px;
+      margin-bottom: 0;
     }
 
     @include breakpoint(small down) {
       @include xy-cell(12, false);
       width: 100%;
+      margin-bottom: 0;
     }
 
     h1 {
@@ -219,30 +224,77 @@
       width: 100%;
       margin-bottom: 50px;
     }
-    
-    > img {
-      position: relative;
-      top: 0;
-      left: 0;
-      width: 170%;
-      height: auto;
 
+    figure {
+      padding: 0;
+      margin: 0 0 60px 0;
+  
       @media screen and (max-width: 768px) {
-        position: relative;
-        left: 50%;
+        width: 80%;
+        padding: 0;
+      }
+  
+      @include breakpoint(small down) {
+        width: 100%;
+        margin-bottom: 50px;
+      }
+  
+      img {
+        display: block;
         width: 100%;
         height: auto;
-        transform: translate(-50%, 0);
       }
-
-      @include breakpoint(small down) {
-        position: relative;
-        left: 50%;
-        width: 170%;
-        height: auto;
-        transform: translate(-50%, 0);
+  
+      .-image {
+        width: 140%;
+        // padding-bottom: calc(492 / 814 * 100%);
+        padding-bottom: calc(641 / 760 * 100%);
+        margin-bottom: 20px;
+        background-repeat: no-repeat;
+        background-position: center top;
+        background-size: cover;
+        background-image: url('../assets/images/work-1.jpg');
+  
+        @media screen and (max-width: 768px) {
+          width: 100%;
+          padding-bottom: calc(463 / 500 * 100%);
+        }
+  
+        @include breakpoint(small down) {
+          position: relative;
+          left: 50%;
+          width: 125%;
+          height: auto;
+          padding-bottom: calc(463 / 400 * 100%);
+          margin-bottom: 10px;
+          transform: translate(-50%, 0);
+        }
       }
     }
+    
+    // > img {
+    //   position: relative;
+    //   top: 0;
+    //   left: 0;
+    //   width: 170%;
+    //   height: auto;
+
+    //   @media screen and (max-width: 768px) {
+    //     position: relative;
+    //     left: 50%;
+    //     width: 100%;
+    //     height: auto;
+    //     transform: translate(-50%, 0);
+    //   }
+
+    //   @include breakpoint(small down) {
+    //     position: relative;
+    //     left: 50%;
+    //     width: 170%;
+    //     height: auto;
+    //     transform: translate(-50%, 0);
+    //   }
+    // }
 
     h1 {
       margin: 0 0 20px 0;
